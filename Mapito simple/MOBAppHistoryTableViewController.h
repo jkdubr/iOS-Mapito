@@ -1,5 +1,5 @@
 //
-//  MOBAppShareViewController.h
+//  MOBAppHistoryTableViewController.h
 //  Mapito simple
 //
 //  Created by Jakub Dubrovsky on 04/04/14.
@@ -10,7 +10,7 @@
 
 @class App;
 
-@interface MOBAppShareViewController : UIViewController
+@interface MOBAppHistoryTableViewController : UITableViewController<NSFetchedResultsControllerDelegate>
 
 @property(nonatomic, strong) App * detail;
 

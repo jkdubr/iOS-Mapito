@@ -14,5 +14,6 @@
 @interface MOBAppFormEditViewController : MOBFormTableViewController
 
 @property(nonatomic, strong) App * detail;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldTitle;
 
 @end

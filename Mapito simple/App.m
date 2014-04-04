@@ -13,7 +13,7 @@
 @interface App  ()
 
 - (void)addItemsObject:(NSManagedObject *)value;
-- (void)removeItemsObject:(NSManagedObject *)value;
+
 - (void)addItems:(NSSet *)values;
 - (void)removeItems:(NSSet *)values;
 
@@ -35,8 +35,7 @@
 
 
 + (instancetype)app{
-    App * app;
-    app = [NSEntityDescription insertNewObjectForEntityForName:@"App" inManagedObjectContext:[[MOBDataManager sharedManager] managedObjectContext]];
+    App * app = [NSEntityDescription insertNewObjectForEntityForName:@"App" inManagedObjectContext:[[MOBDataManager sharedManager] managedObjectContext]];
     [[MOBDataManager sharedManager] saveContext];
     return app;
 }
@@ -74,9 +73,9 @@
     
     NSMutableDictionary * itemData = [[NSMutableDictionary alloc] init];
     for (NSString * itemKey in [values allKeys]) {
-        id val = [[values objectForKey:itemKey] objectForKey:@"value"];
+        id val = values[itemKey][@"value"];
         if (val) {
-            [itemData setObject:val forKey:itemKey];
+            itemData[itemKey] = val;
         }
     }
     
@@ -98,67 +97,17 @@
     return YES;
 }
 
-- (NSString *)geojson{
+- (RACSignal *)saveVersion{
     
-    NSMutableArray * features = [[NSMutableArray alloc] init];
-    NSDictionary * temp = @{
-                            @"type" :   @"FeatureCollection",
-                            @"features" :   features
-                            };
+    History * history = [History history];
+    [history setItems:self.items];
+    [history setApp:self];
     
-    NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Item"];
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"app = %@", self]];
-    NSArray * items = [[[MOBDataManager sharedManager] managedObjectContext] executeFetchRequest:fetchRequest error:NULL];
-    for (Item * item in items) {
-        NSMutableDictionary * tempData = [[NSMutableDictionary alloc] init];
-        if ([item.o_data isKindOfClass:[NSDictionary class]]) {
-            for (NSString * keyData in [item.o_data allKeys]) {
-                if ([item.o_data[keyData] isKindOfClass:[NSString class]] || [item.o_data[keyData] isKindOfClass:[NSNumber class]]) {
-                    tempData[keyData] = item.o_data[keyData];
-                }
-            }
-        }
-        NSDictionary * t = @{
-                             @"type"    :   @"Feature",
-                             @"properties"  :   tempData,
-                             @"geometry"    :   @{
-                                     @"type"    :   @"Point",
-                                     @"coordinates" :   @[item.o_lon,item.o_lat]
-                                     }
-                             };
-        [features addObject:t];
-        
-    }
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:temp
-                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                         error:nil];
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    
-    return jsonString ;
-}
-#pragma mark - share
-- (RACSignal *)shareLink
-{
-    return nil;
-}
-
-- (RACSignal *)uploadToGists
-{
-    NSURL * url = [NSURL URLWithString:@"https://api.github.com/gists"];
-    NSDictionary * params = @{
-                              @"files"  :   @{
-                                      @"mapito.geojson" :   @{
-                                              @"content"    :   [self geojson]
-                                              }
-                                      }
-                              };
-    
-    return  [[[MOBDataManager sharedManager] postJSON:params toURL:url] map:^id(NSDictionary * json){
-        NSString * gistId = json[@"id"];
-        NSString * link = [NSString stringWithFormat:@"http://geojson.io/#id=gist:anonymous/%@", gistId];
-        NSLog(@"gist %@ %@", gistId, link);
-        return link;
+    return [[history upload] map:^id(id x){
+        return history;
     }];
 }
+
+
 
 @end

@@ -45,12 +45,17 @@
     
     self.resultsFormConfig = [NSMutableArray arrayWithArray:self.detail.o_formConfig[@"sections"][0][@"items"]];
     self.resultsFormTypes = [MOBFormCell allTypes];
+    
+    
+      [self.textFieldTitle setText:self.detail.o_title];
+    RAC(self.detail, o_title) = self.textFieldTitle.rac_textSignal;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -90,9 +95,9 @@
     NSDictionary * item;
     
     if (self.tableView == tableView) {
-        item = [self.resultsFormConfig objectAtIndex:indexPath.row];
+        item = self.resultsFormConfig[indexPath.row];
     }else if (self.tableViewFormTypes == tableView){
-        item = [self.resultsFormTypes objectAtIndex:indexPath.row];
+        item = self.resultsFormTypes[indexPath.row];
     }
     
     [cell.textLabel setText:[item objectForKey:@"title"]];
@@ -112,6 +117,24 @@
             [self performSegueWithIdentifier:@"toItem" sender:config];
         }];
     }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.tableView == tableView) {
+        [self.resultsFormConfig removeObjectAtIndex:indexPath.row];
+        [self.tableView reloadData];
+    }
+}
+
+
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.tableView == tableView) {
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - actions

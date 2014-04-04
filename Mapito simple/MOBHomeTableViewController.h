@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MOBHomeTableViewController : UITableViewController
+@interface MOBHomeTableViewController : UITableViewController<NSFetchedResultsControllerDelegate>
 
 @end

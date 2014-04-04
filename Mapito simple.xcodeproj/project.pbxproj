@@ -44,7 +44,8 @@
 		68C6911E18EC045A001B536A /* MOBAppFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6911918EC045A001B536A /* MOBAppFormViewController.m */; };
 		68C6911F18EC045A001B536A /* MOBHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6911B18EC045A001B536A /* MOBHomeTableViewController.m */; };
 		68C6912318EC0874001B536A /* MOBAppFormEditItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6912218EC0874001B536A /* MOBAppFormEditItemViewController.m */; };
-		68CAE47618EEA08200608248 /* MOBAppShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CAE47518EEA08200608248 /* MOBAppShareViewController.m */; };
+		68D5DF2418EF2E960062A5B9 /* MOBAppHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D5DF2318EF2E960062A5B9 /* MOBAppHistoryTableViewController.m */; };
+		68D5DF2718EF3FC00062A5B9 /* MOBAppDataDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D5DF2618EF3FC00062A5B9 /* MOBAppDataDetailViewController.m */; };
 		A8A2B39F967D4BA7BB97CB16 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76794C86C2BC4F9ABAC7803E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -122,8 +123,10 @@
 		68C6911B18EC045A001B536A /* MOBHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBHomeTableViewController.m; sourceTree = "<group>"; };
 		68C6912118EC0874001B536A /* MOBAppFormEditItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAppFormEditItemViewController.h; sourceTree = "<group>"; };
 		68C6912218EC0874001B536A /* MOBAppFormEditItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAppFormEditItemViewController.m; sourceTree = "<group>"; };
-		68CAE47418EEA08200608248 /* MOBAppShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAppShareViewController.h; sourceTree = "<group>"; };
-		68CAE47518EEA08200608248 /* MOBAppShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAppShareViewController.m; sourceTree = "<group>"; };
+		68D5DF2218EF2E960062A5B9 /* MOBAppHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBAppHistoryTableViewController.h; path = "../../Mapito Simple/Mapito simple/MOBAppHistoryTableViewController.h"; sourceTree = "<group>"; };
+		68D5DF2318EF2E960062A5B9 /* MOBAppHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBAppHistoryTableViewController.m; path = "../../Mapito Simple/Mapito simple/MOBAppHistoryTableViewController.m"; sourceTree = "<group>"; };
+		68D5DF2518EF3FC00062A5B9 /* MOBAppDataDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBAppDataDetailViewController.h; path = "../../Mapito Simple/Mapito simple/MOBAppDataDetailViewController.h"; sourceTree = "<group>"; };
+		68D5DF2618EF3FC00062A5B9 /* MOBAppDataDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBAppDataDetailViewController.m; path = "../../Mapito Simple/Mapito simple/MOBAppDataDetailViewController.m"; sourceTree = "<group>"; };
 		76794C86C2BC4F9ABAC7803E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A1298FCC2B49E0A16CD184 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,8 +312,10 @@
 				68C6911918EC045A001B536A /* MOBAppFormViewController.m */,
 				68A45F7B18EE813300D03D14 /* MOBAppDataViewController.h */,
 				68A45F7C18EE813300D03D14 /* MOBAppDataViewController.m */,
-				68CAE47418EEA08200608248 /* MOBAppShareViewController.h */,
-				68CAE47518EEA08200608248 /* MOBAppShareViewController.m */,
+				68D5DF2218EF2E960062A5B9 /* MOBAppHistoryTableViewController.h */,
+				68D5DF2318EF2E960062A5B9 /* MOBAppHistoryTableViewController.m */,
+				68D5DF2518EF3FC00062A5B9 /* MOBAppDataDetailViewController.h */,
+				68D5DF2618EF3FC00062A5B9 /* MOBAppDataDetailViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -449,13 +454,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				68C690F818EC0310001B536A /* MOBDataManager.m in Sources */,
+				68D5DF2418EF2E960062A5B9 /* MOBAppHistoryTableViewController.m in Sources */,
 				68C6911C18EC045A001B536A /* MOBAppCreateViewController.m in Sources */,
 				68C6910E18EC031A001B536A /* MOBFormPhotoCell.m in Sources */,
 				68C6911118EC031A001B536A /* MOBFormSwitchCell.m in Sources */,
 				68C690E918EC00BC001B536A /* Item.m in Sources */,
 				68C6911218EC031A001B536A /* MOBFormTableViewController.m in Sources */,
 				68C6910D18EC031A001B536A /* MOBFormGPSCell.m in Sources */,
-				68CAE47618EEA08200608248 /* MOBAppShareViewController.m in Sources */,
 				68C6911018EC031A001B536A /* MOBFormStepperCell.m in Sources */,
 				68C6911D18EC045A001B536A /* MOBAppFormEditViewController.m in Sources */,
 				68C6306618EAF53F00220536 /* main.m in Sources */,
@@ -470,6 +475,7 @@
 				68C690F718EC0310001B536A /* MOBAccount.m in Sources */,
 				68C6910C18EC031A001B536A /* MOBFormCodeScanner.m in Sources */,
 				68C6309318EB01C200220536 /* Model.xcdatamodeld in Sources */,
+				68D5DF2718EF3FC00062A5B9 /* MOBAppDataDetailViewController.m in Sources */,
 				68C6912318EC0874001B536A /* MOBAppFormEditItemViewController.m in Sources */,
 				68C6911E18EC045A001B536A /* MOBAppFormViewController.m in Sources */,
 				68C6910F18EC031A001B536A /* MOBFormSelectboxCell.m in Sources */,
@@ -555,7 +561,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -587,7 +593,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

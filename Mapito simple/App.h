@@ -6,10 +6,14 @@
 //  Copyright (c) 2014 Mobera. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+typedef NS_ENUM(int16_t, kMOBAppType) {
+    kMOBAppTypePrivate,
+    kMOBAppTypeShared,
+    kMOBAppTypeTemplate
+};
 
-@class History;
+
+@class History, Item;
 
 @interface App : NSManagedObject
 
@@ -21,11 +25,15 @@
 @property (nonatomic, retain) NSDictionary * o_formConfig;
 @property (nonatomic, retain) NSString * o_id;
 @property (nonatomic, retain) NSString * o_title;
-@property (nonatomic, retain) NSNumber * o_type;
+@property (nonatomic) kMOBAppType  o_type;
 @property (nonatomic, retain) NSSet *items;
 @property (nonatomic, retain) NSSet *history;
 
 -(BOOL) addItem:(NSDictionary *) values;
+- (void)removeItemsObject:(Item *)value;
+
+//@return History
+- (RACSignal *) saveVersion;
 
 - (RACSignal *) shareLink;
 - (RACSignal *) uploadToGists;

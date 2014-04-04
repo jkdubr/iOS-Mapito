@@ -12,7 +12,7 @@
 #import "App.h"
 #import "Item.h"
 
-#import "MOBAppFormViewController.h"
+#import "MOBAppDataDetailViewController.h"
 
 
 @interface MOBAppDataViewController ()
@@ -27,7 +27,7 @@
 @property(nonatomic, strong) UIBarButtonItem * barButtonCancel;
 
 
--(void) reloadData;
+-(void) reloadMap;
 
 @end
 
@@ -53,11 +53,12 @@
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"o_id" ascending:NO];
     fetchRequest.sortDescriptors = @[descriptor];
     
-    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                         managedObjectContext:[[MOBDataManager sharedManager] managedObjectContext]
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
-    [self.fetchedResultsController performFetch:nil];
+    [_fetchedResultsController setDelegate:self];
+    [_fetchedResultsController performFetch:nil];
     
     
     
@@ -72,14 +73,16 @@
     
     CGRect frame = self.mapView.frame;
     frame.origin.y=64;
-    frame.size.height = frame.size.height-64;
+    frame.size.height = frame.size.height-64-216;
     
     self.tableView = [[UITableView alloc] initWithFrame:frame];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     [self.tableView setHidden:YES];
     [self.mapView addSubview:self.tableView];
-    
+    [self.tableView registerClass: [UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+
+    [self reloadMap];
     // [self.refreshControl addTarget:self action:@selector(reloadData) forControlEvents:UIControlEventValueChanged];
 }
 
@@ -92,11 +95,6 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-    [self reloadData];
-}
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -112,9 +110,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"toDetail"]){
-        Item * item = [_fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        [segue.destinationViewController setApp:self.detail];
-//        [segue.destinationViewController setItem:item];
+        Item * item = (Item *) sender;
+        [(MOBAppDataDetailViewController *)segue.destinationViewController setDetail:item];
         [segue.destinationViewController setEditingForm:NO];
     }
 }
@@ -123,7 +120,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return self.fetchedResultsController.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -136,34 +133,69 @@
 }
 
 
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    Item * item = [_fetchedResultsController objectAtIndexPath:indexPath];
+    [cell.textLabel setText:item.o_title];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
-    Item * item = [_fetchedResultsController objectAtIndexPath:indexPath];
-    
-    [cell.textLabel setText:item.o_title];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
+    [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self performSegueWithIdentifier:@"toDetail" sender:nil];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Item * item = [_fetchedResultsController objectAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"toDetail" sender:item];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Item * item = [_fetchedResultsController objectAtIndexPath:indexPath];
+    [[[MOBDataManager sharedManager] managedObjectContext] deleteObject:item];
+    [[MOBDataManager sharedManager] saveContext];
+}
+
+#pragma mark - map
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    Item * item = (Item *)view.annotation;
+    [self performSegueWithIdentifier:@"toDetail" sender:item];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKPinAnnotationView *annView=[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"mapannot-poi"];
+    
+    UIButton *advertButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    advertButton.frame = CGRectMake(0, 0, 23, 23);
+    advertButton.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    advertButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    
+    annView.rightCalloutAccessoryView = advertButton;
+    
+    annView.canShowCallout = YES;
+    annView.calloutOffset = CGPointMake(-5, 5);
+    return annView;
+}
+
+
 #pragma mark - actions
-- (void)searchBarCancel:(id)sender{
+- (void)searchBarCancel:(id)sender
+{
     [self searchBarDismiss];
 }
 
 
--(void)reloadData{
-
+-(void)reloadMap{
     [self.mapView removeAnnotations:self.mapView.annotations];
-    [self.mapView addAnnotations:[self.detail.items allObjects]];
+    [self.mapView addAnnotations:self.fetchedResultsController.fetchedObjects];
     
     MKMapRect zoomRect = MKMapRectNull;
     for (id <MKAnnotation> annotation in self.mapView.annotations) {
@@ -186,19 +218,20 @@
 #pragma mark - searchbar
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
-    
+    /*
     NSArray *selectedAnnotations = self.mapView.selectedAnnotations;
     for (id<MKAnnotation>a in selectedAnnotations) {
         [self.mapView deselectAnnotation:a animated:YES];
     }
+    */
     
+    /*
     NSMutableArray * subPredicates = [NSMutableArray arrayWithObject:[NSPredicate predicateWithFormat: @"app == %@ ", self.detail]];
     NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:subPredicates];
     
     [self.fetchedResultsController.fetchRequest setPredicate:predicate];
     [self.fetchedResultsController performFetch:nil];
-    [self.tableView reloadData];
-    
+    */
     [self.tableView setHidden:NO];
     [self.tableView setAlpha:0.7];
     [self.navigationItem setRightBarButtonItem:self.barButtonCancel animated:YES];
@@ -212,14 +245,16 @@
     
     NSMutableArray * subPredicates = [NSMutableArray arrayWithObject:[NSPredicate predicateWithFormat: @"app == %@ ", self.detail]];
     if ([searchBar.text length]) {
-        [subPredicates addObject:[NSPredicate predicateWithFormat: @"title contains[c] %@ ", searchBar.text]];
+        [subPredicates addObject:[NSPredicate predicateWithFormat: @"o_title contains[c] %@ ", searchBar.text]];
     }
     
     NSPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:subPredicates];
     
-    [self.fetchedResultsController.fetchRequest setPredicate:predicate];
-    [self.fetchedResultsController performFetch:nil];
+    [_fetchedResultsController.fetchRequest setPredicate:predicate];
+
+    [_fetchedResultsController performFetch:NULL];
     [self.tableView reloadData];
+    [self reloadMap];
 }
 
 #pragma mark - misc
@@ -227,5 +262,67 @@
     [self.searchBar resignFirstResponder];
     [self.tableView setHidden:YES];
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+}
+
+
+#pragma mark - fetchedResultsController
+
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller is about to start sending change notifications, so prepare the table view for updates.
+    [self.tableView beginUpdates];
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:[NSArray
+                                               arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray
+                                               arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id )sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView endUpdates];
+    
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.mapView addAnnotations:_fetchedResultsController.fetchedObjects];
+    
+    [self reloadMap];
 }
 @end

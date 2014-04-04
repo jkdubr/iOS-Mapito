@@ -12,7 +12,7 @@
 
 @class App;
 
-@interface MOBAppDataViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface MOBAppDataViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, NSFetchedResultsControllerDelegate, MKMapViewDelegate>
 
 @property(nonatomic, strong) App * detail;
 

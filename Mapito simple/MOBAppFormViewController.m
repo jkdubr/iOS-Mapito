@@ -10,9 +10,9 @@
 
 #import "MOBAppFormEditViewController.h"
 #import "MOBAppDataViewController.h"
-#import "MOBAppShareViewController.h"
 
 #import "App.h"
+#import "History.h"
 
 @interface MOBAppFormViewController ()
 
@@ -43,7 +43,7 @@
     [super viewWillAppear:animated];
     
     
-
+    
     NSLog(@"x %@", self.formConfig);
     
     [self.tableView reloadData];
@@ -71,6 +71,8 @@
         [segue.destinationViewController setDetail:self.detail];
     } else if ([segue.identifier isEqualToString:@"toShare"]){
         [segue.destinationViewController setDetail:self.detail];
+    } else if ([segue.identifier isEqualToString:@"toHistory"]){
+        [segue.destinationViewController setDetail:self.detail];
     }
 }
 
@@ -79,8 +81,9 @@
 - (IBAction)save:(UIBarButtonItem *)sender {
     
     [self.detail addItem:self.formValues];
-    [[MOBDataManager sharedManager] saveContext];
     
+    [[MOBDataManager sharedManager] saveContext];
+    self.formValues = [[NSMutableDictionary alloc] init];
     
     
     UIImageView * v=[[UIImageView alloc] initWithFrame:[[[[UIApplication sharedApplication] keyWindow] rootViewController] view].frame];
@@ -96,7 +99,6 @@
     
     [UIView animateWithDuration:1 animations:^(void){
         [v setFrame:CGRectMake(320, 0, 10, 30)];
-        
         [self.tableView reloadData];
     } completion:^(BOOL finished){
         [v removeFromSuperview];
@@ -104,6 +106,16 @@
     
     
 }
+- (IBAction)toHome:(UIBarButtonItem *)sender {
+    [self.navigationController setViewControllers:@[self.navigationController.viewControllers[0]] animated:YES];
+}
 
+- (IBAction)share:(UIButton *)sender {
+    
+    [[self.detail saveVersion] subscribeNext:^(History * history){
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[history linkMap]] applicationActivities:nil];
+        [self presentViewController:activityVC animated:YES completion:nil];
+    }];
+}
 
 @end

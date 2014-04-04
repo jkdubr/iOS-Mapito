@@ -1,24 +1,25 @@
 //
-//  MOBHomeTableViewController.m
+//  MOBAppHistoryTableViewController.m
 //  Mapito simple
 //
-//  Created by Jakub Dubrovsky on 02/04/14.
+//  Created by Jakub Dubrovsky on 04/04/14.
 //  Copyright (c) 2014 Mobera. All rights reserved.
 //
 
-#import "MOBHomeTableViewController.h"
-
-#import "MOBAppFormViewController.h"
+#import "MOBAppHistoryTableViewController.h"
 
 #import "App.h"
+#import "History.h"
 
-@interface MOBHomeTableViewController ()
+@interface MOBAppHistoryTableViewController (){
+    NSDateFormatter * dateFormatter;
+}
 
 @property(nonatomic, strong) NSFetchedResultsController * fetchedResultsController;
 
 @end
 
-@implementation MOBHomeTableViewController
+@implementation MOBAppHistoryTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,27 +34,26 @@
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
+    dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd' 'HH:mm:ss"];//yyyy-MM-dd'T'HH:mm:ssZ
+    
     self.clearsSelectionOnViewWillAppear = YES;
     
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"App"];
-    NSSortDescriptor *descriptor1 = [NSSortDescriptor sortDescriptorWithKey:@"o_type" ascending:NO];
-    NSSortDescriptor *descriptor2 = [NSSortDescriptor sortDescriptorWithKey:@"o_title" ascending:NO];
-    fetchRequest.sortDescriptors = @[descriptor1,descriptor2];
-    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"History"];
+    NSSortDescriptor *descriptor1 = [NSSortDescriptor sortDescriptorWithKey:@"o_timestamp" ascending:NO];
+    fetchRequest.sortDescriptors = @[descriptor1];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"app = %@", self.detail]];
     // Setup fetched results
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                         managedObjectContext:[[MOBDataManager sharedManager] managedObjectContext]
-                                                                          sectionNameKeyPath:@"o_type"
+                                                                          sectionNameKeyPath:nil
                                                                                    cacheName:nil];
     [self.fetchedResultsController setDelegate:self];
     [self.fetchedResultsController performFetch:nil];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
     
 }
 
@@ -75,77 +75,36 @@
     return [[self.fetchedResultsController.sections objectAtIndex:section] numberOfObjects];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    App * app = [_fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
-    if (app.o_type == kMOBAppTypePrivate) {
-        return @"Private layers";
-    }else if (app.o_type == kMOBAppTypeTemplate){
-        return @"Templates";
-    }else if (app.o_type == kMOBAppTypeShared){
-        return @"Shared Layers";
-    }
-    return @"";
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    App * app = [_fetchedResultsController objectAtIndexPath:indexPath];
-    if (app.o_type == kMOBAppTypePrivate) {
-        [self performSegueWithIdentifier:@"toLayer" sender:app];
-    }else if (app.o_type == kMOBAppTypeTemplate){
-        [self performSegueWithIdentifier:@"toTemplate" sender:app];
-    }
-}
-
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    App * app = [_fetchedResultsController objectAtIndexPath:indexPath];
-    [cell.textLabel setText:app.o_title];
+    History * history = [_fetchedResultsController objectAtIndexPath:indexPath];
+    NSString * title = [dateFormatter stringFromDate:history.o_timestamp];
+    [cell.textLabel setText:title];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
+   
     [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    History * history = [_fetchedResultsController objectAtIndexPath:indexPath];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[history linkMap]] applicationActivities:nil];
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    App * app = [_fetchedResultsController objectAtIndexPath:indexPath];
-    [[[MOBDataManager sharedManager] managedObjectContext] deleteObject:app];
+    History * history = [_fetchedResultsController objectAtIndexPath:indexPath];
+    [[[MOBDataManager sharedManager] managedObjectContext] deleteObject:history];
     [[MOBDataManager sharedManager] saveContext];
 }
-
-
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    App * app = [_fetchedResultsController objectAtIndexPath:indexPath];
-    if (app.o_type == kMOBAppTypeTemplate) {
-        return NO;
-    }
-    return YES;
-}
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"toLayer"]) {
-        App * app = (App *) sender;
-        [segue.destinationViewController setDetail:app];
-    }}
-
-
-#pragma mark - actoins
-- (IBAction)toCustom:(UIButton *)sender {
-    [self performSegueWithIdentifier:@"toCustom" sender:nil];
-}
-
 
 #pragma mark - fetchedResultsController
 
@@ -202,5 +161,4 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
 }
-
 @end
