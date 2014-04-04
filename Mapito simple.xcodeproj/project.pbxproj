@@ -1,0 +1,710 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		68A45F7D18EE813300D03D14 /* MOBAppDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A45F7C18EE813300D03D14 /* MOBAppDataViewController.m */; };
+		68A45F7F18EE841700D03D14 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A45F7E18EE841700D03D14 /* MapKit.framework */; };
+		68C6305A18EAF53F00220536 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6305918EAF53F00220536 /* Foundation.framework */; };
+		68C6305C18EAF53F00220536 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6305B18EAF53F00220536 /* CoreGraphics.framework */; };
+		68C6305E18EAF53F00220536 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6305D18EAF53F00220536 /* UIKit.framework */; };
+		68C6306418EAF53F00220536 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68C6306218EAF53F00220536 /* InfoPlist.strings */; };
+		68C6306618EAF53F00220536 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6306518EAF53F00220536 /* main.m */; };
+		68C6306A18EAF53F00220536 /* MOBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6306918EAF53F00220536 /* MOBAppDelegate.m */; };
+		68C6306D18EAF53F00220536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68C6306B18EAF53F00220536 /* Main.storyboard */; };
+		68C6307218EAF53F00220536 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C6307118EAF53F00220536 /* Images.xcassets */; };
+		68C6307918EAF53F00220536 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6307818EAF53F00220536 /* XCTest.framework */; };
+		68C6307A18EAF53F00220536 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6305918EAF53F00220536 /* Foundation.framework */; };
+		68C6307B18EAF53F00220536 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6305D18EAF53F00220536 /* UIKit.framework */; };
+		68C6308318EAF53F00220536 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68C6308118EAF53F00220536 /* InfoPlist.strings */; };
+		68C6308518EAF53F00220536 /* Mapito_simpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6308418EAF53F00220536 /* Mapito_simpleTests.m */; };
+		68C6309318EB01C200220536 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68C6309118EB01C200220536 /* Model.xcdatamodeld */; };
+		68C690E018EC00BC001B536A /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C690DF18EC00BC001B536A /* Account.m */; };
+		68C690E318EC00BC001B536A /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C690E218EC00BC001B536A /* History.m */; };
+		68C690E618EC00BC001B536A /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C690E518EC00BC001B536A /* App.m */; };
+		68C690E918EC00BC001B536A /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C690E818EC00BC001B536A /* Item.m */; };
+		68C690F218EC0147001B536A /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C690F118EC0147001B536A /* Constants.m */; };
+		68C690F718EC0310001B536A /* MOBAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C690F418EC0310001B536A /* MOBAccount.m */; };
+		68C690F818EC0310001B536A /* MOBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C690F618EC0310001B536A /* MOBDataManager.m */; };
+		68C6910B18EC031A001B536A /* MOBFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C690FA18EC031A001B536A /* MOBFormCell.m */; };
+		68C6910C18EC031A001B536A /* MOBFormCodeScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C690FC18EC031A001B536A /* MOBFormCodeScanner.m */; };
+		68C6910D18EC031A001B536A /* MOBFormGPSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C690FE18EC031A001B536A /* MOBFormGPSCell.m */; };
+		68C6910E18EC031A001B536A /* MOBFormPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6910018EC031A001B536A /* MOBFormPhotoCell.m */; };
+		68C6910F18EC031A001B536A /* MOBFormSelectboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6910218EC031A001B536A /* MOBFormSelectboxCell.m */; };
+		68C6911018EC031A001B536A /* MOBFormStepperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6910418EC031A001B536A /* MOBFormStepperCell.m */; };
+		68C6911118EC031A001B536A /* MOBFormSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6910618EC031A001B536A /* MOBFormSwitchCell.m */; };
+		68C6911218EC031A001B536A /* MOBFormTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6910818EC031A001B536A /* MOBFormTableViewController.m */; };
+		68C6911318EC031A001B536A /* MOBFormTextfieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6910A18EC031A001B536A /* MOBFormTextfieldCell.m */; };
+		68C6911C18EC045A001B536A /* MOBAppCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6911518EC045A001B536A /* MOBAppCreateViewController.m */; };
+		68C6911D18EC045A001B536A /* MOBAppFormEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6911718EC045A001B536A /* MOBAppFormEditViewController.m */; };
+		68C6911E18EC045A001B536A /* MOBAppFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6911918EC045A001B536A /* MOBAppFormViewController.m */; };
+		68C6911F18EC045A001B536A /* MOBHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6911B18EC045A001B536A /* MOBHomeTableViewController.m */; };
+		68C6912318EC0874001B536A /* MOBAppFormEditItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6912218EC0874001B536A /* MOBAppFormEditItemViewController.m */; };
+		68CAE47618EEA08200608248 /* MOBAppShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CAE47518EEA08200608248 /* MOBAppShareViewController.m */; };
+		A8A2B39F967D4BA7BB97CB16 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76794C86C2BC4F9ABAC7803E /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		68C6307C18EAF53F00220536 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68C6304E18EAF53F00220536 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68C6305518EAF53F00220536;
+			remoteInfo = "Mapito simple";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		68A45F7B18EE813300D03D14 /* MOBAppDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAppDataViewController.h; sourceTree = "<group>"; };
+		68A45F7C18EE813300D03D14 /* MOBAppDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAppDataViewController.m; sourceTree = "<group>"; };
+		68A45F7E18EE841700D03D14 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		68C6305618EAF53F00220536 /* Mapito simple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mapito simple.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68C6305918EAF53F00220536 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		68C6305B18EAF53F00220536 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		68C6305D18EAF53F00220536 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		68C6306118EAF53F00220536 /* Mapito simple-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mapito simple-Info.plist"; sourceTree = "<group>"; };
+		68C6306318EAF53F00220536 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		68C6306518EAF53F00220536 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		68C6306718EAF53F00220536 /* Mapito simple-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mapito simple-Prefix.pch"; sourceTree = "<group>"; };
+		68C6306818EAF53F00220536 /* MOBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOBAppDelegate.h; sourceTree = "<group>"; };
+		68C6306918EAF53F00220536 /* MOBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOBAppDelegate.m; sourceTree = "<group>"; };
+		68C6306C18EAF53F00220536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		68C6307118EAF53F00220536 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		68C6307718EAF53F00220536 /* Mapito simpleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mapito simpleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68C6307818EAF53F00220536 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		68C6308018EAF53F00220536 /* Mapito simpleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mapito simpleTests-Info.plist"; sourceTree = "<group>"; };
+		68C6308218EAF53F00220536 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		68C6308418EAF53F00220536 /* Mapito_simpleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mapito_simpleTests.m; sourceTree = "<group>"; };
+		68C6309218EB01C200220536 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		68C690DE18EC00BC001B536A /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		68C690DF18EC00BC001B536A /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		68C690E118EC00BC001B536A /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
+		68C690E218EC00BC001B536A /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
+		68C690E418EC00BC001B536A /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		68C690E518EC00BC001B536A /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
+		68C690E718EC00BC001B536A /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		68C690E818EC00BC001B536A /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		68C690F018EC0147001B536A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		68C690F118EC0147001B536A /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		68C690F318EC0310001B536A /* MOBAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBAccount.h; path = ../../shared/MOBAccount.h; sourceTree = "<group>"; };
+		68C690F418EC0310001B536A /* MOBAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBAccount.m; path = ../../shared/MOBAccount.m; sourceTree = "<group>"; };
+		68C690F518EC0310001B536A /* MOBDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBDataManager.h; path = ../../shared/MOBDataManager.h; sourceTree = "<group>"; };
+		68C690F618EC0310001B536A /* MOBDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBDataManager.m; path = ../../shared/MOBDataManager.m; sourceTree = "<group>"; };
+		68C690F918EC031A001B536A /* MOBFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormCell.h; path = ../../shared/Forms/MOBFormCell.h; sourceTree = "<group>"; };
+		68C690FA18EC031A001B536A /* MOBFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormCell.m; path = ../../shared/Forms/MOBFormCell.m; sourceTree = "<group>"; };
+		68C690FB18EC031A001B536A /* MOBFormCodeScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormCodeScanner.h; path = ../../shared/Forms/MOBFormCodeScanner.h; sourceTree = "<group>"; };
+		68C690FC18EC031A001B536A /* MOBFormCodeScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormCodeScanner.m; path = ../../shared/Forms/MOBFormCodeScanner.m; sourceTree = "<group>"; };
+		68C690FD18EC031A001B536A /* MOBFormGPSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormGPSCell.h; path = ../../shared/Forms/MOBFormGPSCell.h; sourceTree = "<group>"; };
+		68C690FE18EC031A001B536A /* MOBFormGPSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormGPSCell.m; path = ../../shared/Forms/MOBFormGPSCell.m; sourceTree = "<group>"; };
+		68C690FF18EC031A001B536A /* MOBFormPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormPhotoCell.h; path = ../../shared/Forms/MOBFormPhotoCell.h; sourceTree = "<group>"; };
+		68C6910018EC031A001B536A /* MOBFormPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormPhotoCell.m; path = ../../shared/Forms/MOBFormPhotoCell.m; sourceTree = "<group>"; };
+		68C6910118EC031A001B536A /* MOBFormSelectboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormSelectboxCell.h; path = ../../shared/Forms/MOBFormSelectboxCell.h; sourceTree = "<group>"; };
+		68C6910218EC031A001B536A /* MOBFormSelectboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormSelectboxCell.m; path = ../../shared/Forms/MOBFormSelectboxCell.m; sourceTree = "<group>"; };
+		68C6910318EC031A001B536A /* MOBFormStepperCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormStepperCell.h; path = ../../shared/Forms/MOBFormStepperCell.h; sourceTree = "<group>"; };
+		68C6910418EC031A001B536A /* MOBFormStepperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormStepperCell.m; path = ../../shared/Forms/MOBFormStepperCell.m; sourceTree = "<group>"; };
+		68C6910518EC031A001B536A /* MOBFormSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormSwitchCell.h; path = ../../shared/Forms/MOBFormSwitchCell.h; sourceTree = "<group>"; };
+		68C6910618EC031A001B536A /* MOBFormSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormSwitchCell.m; path = ../../shared/Forms/MOBFormSwitchCell.m; sourceTree = "<group>"; };
+		68C6910718EC031A001B536A /* MOBFormTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormTableViewController.h; path = ../../shared/Forms/MOBFormTableViewController.h; sourceTree = "<group>"; };
+		68C6910818EC031A001B536A /* MOBFormTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormTableViewController.m; path = ../../shared/Forms/MOBFormTableViewController.m; sourceTree = "<group>"; };
+		68C6910918EC031A001B536A /* MOBFormTextfieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormTextfieldCell.h; path = ../../shared/Forms/MOBFormTextfieldCell.h; sourceTree = "<group>"; };
+		68C6910A18EC031A001B536A /* MOBFormTextfieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormTextfieldCell.m; path = ../../shared/Forms/MOBFormTextfieldCell.m; sourceTree = "<group>"; };
+		68C6911418EC045A001B536A /* MOBAppCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAppCreateViewController.h; sourceTree = "<group>"; };
+		68C6911518EC045A001B536A /* MOBAppCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAppCreateViewController.m; sourceTree = "<group>"; };
+		68C6911618EC045A001B536A /* MOBAppFormEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAppFormEditViewController.h; sourceTree = "<group>"; };
+		68C6911718EC045A001B536A /* MOBAppFormEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAppFormEditViewController.m; sourceTree = "<group>"; };
+		68C6911818EC045A001B536A /* MOBAppFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAppFormViewController.h; sourceTree = "<group>"; };
+		68C6911918EC045A001B536A /* MOBAppFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAppFormViewController.m; sourceTree = "<group>"; };
+		68C6911A18EC045A001B536A /* MOBHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBHomeTableViewController.h; sourceTree = "<group>"; };
+		68C6911B18EC045A001B536A /* MOBHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBHomeTableViewController.m; sourceTree = "<group>"; };
+		68C6912118EC0874001B536A /* MOBAppFormEditItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAppFormEditItemViewController.h; sourceTree = "<group>"; };
+		68C6912218EC0874001B536A /* MOBAppFormEditItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAppFormEditItemViewController.m; sourceTree = "<group>"; };
+		68CAE47418EEA08200608248 /* MOBAppShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAppShareViewController.h; sourceTree = "<group>"; };
+		68CAE47518EEA08200608248 /* MOBAppShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAppShareViewController.m; sourceTree = "<group>"; };
+		76794C86C2BC4F9ABAC7803E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7A1298FCC2B49E0A16CD184 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68C6305318EAF53F00220536 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68A45F7F18EE841700D03D14 /* MapKit.framework in Frameworks */,
+				68C6305C18EAF53F00220536 /* CoreGraphics.framework in Frameworks */,
+				68C6305E18EAF53F00220536 /* UIKit.framework in Frameworks */,
+				68C6305A18EAF53F00220536 /* Foundation.framework in Frameworks */,
+				A8A2B39F967D4BA7BB97CB16 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68C6307418EAF53F00220536 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C6307918EAF53F00220536 /* XCTest.framework in Frameworks */,
+				68C6307B18EAF53F00220536 /* UIKit.framework in Frameworks */,
+				68C6307A18EAF53F00220536 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68C6304D18EAF53F00220536 = {
+			isa = PBXGroup;
+			children = (
+				68C6305F18EAF53F00220536 /* Mapito simple */,
+				68C6307E18EAF53F00220536 /* Mapito simpleTests */,
+				68C6305818EAF53F00220536 /* Frameworks */,
+				68C6305718EAF53F00220536 /* Products */,
+				D7A1298FCC2B49E0A16CD184 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		68C6305718EAF53F00220536 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68C6305618EAF53F00220536 /* Mapito simple.app */,
+				68C6307718EAF53F00220536 /* Mapito simpleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68C6305818EAF53F00220536 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68A45F7E18EE841700D03D14 /* MapKit.framework */,
+				68C6305918EAF53F00220536 /* Foundation.framework */,
+				68C6305B18EAF53F00220536 /* CoreGraphics.framework */,
+				68C6305D18EAF53F00220536 /* UIKit.framework */,
+				68C6307818EAF53F00220536 /* XCTest.framework */,
+				76794C86C2BC4F9ABAC7803E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68C6305F18EAF53F00220536 /* Mapito simple */ = {
+			isa = PBXGroup;
+			children = (
+				68C6912018EC0461001B536A /* controller */,
+				68C630AF18EBDAFA00220536 /* shared */,
+				68C6308F18EB01A500220536 /* view */,
+				68C6308E18EB019F00220536 /* model */,
+				68C6306818EAF53F00220536 /* MOBAppDelegate.h */,
+				68C6306918EAF53F00220536 /* MOBAppDelegate.m */,
+				68C6307118EAF53F00220536 /* Images.xcassets */,
+				68C6306018EAF53F00220536 /* Supporting Files */,
+			);
+			path = "Mapito simple";
+			sourceTree = "<group>";
+		};
+		68C6306018EAF53F00220536 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68C6306118EAF53F00220536 /* Mapito simple-Info.plist */,
+				68C6306218EAF53F00220536 /* InfoPlist.strings */,
+				68C6306518EAF53F00220536 /* main.m */,
+				68C6306718EAF53F00220536 /* Mapito simple-Prefix.pch */,
+				68C690F018EC0147001B536A /* Constants.h */,
+				68C690F118EC0147001B536A /* Constants.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		68C6307E18EAF53F00220536 /* Mapito simpleTests */ = {
+			isa = PBXGroup;
+			children = (
+				68C6308418EAF53F00220536 /* Mapito_simpleTests.m */,
+				68C6307F18EAF53F00220536 /* Supporting Files */,
+			);
+			path = "Mapito simpleTests";
+			sourceTree = "<group>";
+		};
+		68C6307F18EAF53F00220536 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68C6308018EAF53F00220536 /* Mapito simpleTests-Info.plist */,
+				68C6308118EAF53F00220536 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		68C6308E18EB019F00220536 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				68C6309118EB01C200220536 /* Model.xcdatamodeld */,
+				68C690E718EC00BC001B536A /* Item.h */,
+				68C690E818EC00BC001B536A /* Item.m */,
+				68C690E418EC00BC001B536A /* App.h */,
+				68C690E518EC00BC001B536A /* App.m */,
+				68C690E118EC00BC001B536A /* History.h */,
+				68C690E218EC00BC001B536A /* History.m */,
+				68C690DE18EC00BC001B536A /* Account.h */,
+				68C690DF18EC00BC001B536A /* Account.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		68C6308F18EB01A500220536 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				68C6306B18EAF53F00220536 /* Main.storyboard */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		68C630AF18EBDAFA00220536 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				68C630B018EBDB0000220536 /* form */,
+				68C690F318EC0310001B536A /* MOBAccount.h */,
+				68C690F418EC0310001B536A /* MOBAccount.m */,
+				68C690F518EC0310001B536A /* MOBDataManager.h */,
+				68C690F618EC0310001B536A /* MOBDataManager.m */,
+			);
+			name = shared;
+			sourceTree = "<group>";
+		};
+		68C630B018EBDB0000220536 /* form */ = {
+			isa = PBXGroup;
+			children = (
+				68C6910718EC031A001B536A /* MOBFormTableViewController.h */,
+				68C6910818EC031A001B536A /* MOBFormTableViewController.m */,
+				68C690F918EC031A001B536A /* MOBFormCell.h */,
+				68C690FA18EC031A001B536A /* MOBFormCell.m */,
+				68C690FB18EC031A001B536A /* MOBFormCodeScanner.h */,
+				68C690FC18EC031A001B536A /* MOBFormCodeScanner.m */,
+				68C690FD18EC031A001B536A /* MOBFormGPSCell.h */,
+				68C690FE18EC031A001B536A /* MOBFormGPSCell.m */,
+				68C690FF18EC031A001B536A /* MOBFormPhotoCell.h */,
+				68C6910018EC031A001B536A /* MOBFormPhotoCell.m */,
+				68C6910118EC031A001B536A /* MOBFormSelectboxCell.h */,
+				68C6910218EC031A001B536A /* MOBFormSelectboxCell.m */,
+				68C6910318EC031A001B536A /* MOBFormStepperCell.h */,
+				68C6910418EC031A001B536A /* MOBFormStepperCell.m */,
+				68C6910518EC031A001B536A /* MOBFormSwitchCell.h */,
+				68C6910618EC031A001B536A /* MOBFormSwitchCell.m */,
+				68C6910918EC031A001B536A /* MOBFormTextfieldCell.h */,
+				68C6910A18EC031A001B536A /* MOBFormTextfieldCell.m */,
+			);
+			name = form;
+			sourceTree = "<group>";
+		};
+		68C6912018EC0461001B536A /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				68C6911A18EC045A001B536A /* MOBHomeTableViewController.h */,
+				68C6911B18EC045A001B536A /* MOBHomeTableViewController.m */,
+				68C6911418EC045A001B536A /* MOBAppCreateViewController.h */,
+				68C6911518EC045A001B536A /* MOBAppCreateViewController.m */,
+				68C6911618EC045A001B536A /* MOBAppFormEditViewController.h */,
+				68C6911718EC045A001B536A /* MOBAppFormEditViewController.m */,
+				68C6912118EC0874001B536A /* MOBAppFormEditItemViewController.h */,
+				68C6912218EC0874001B536A /* MOBAppFormEditItemViewController.m */,
+				68C6911818EC045A001B536A /* MOBAppFormViewController.h */,
+				68C6911918EC045A001B536A /* MOBAppFormViewController.m */,
+				68A45F7B18EE813300D03D14 /* MOBAppDataViewController.h */,
+				68A45F7C18EE813300D03D14 /* MOBAppDataViewController.m */,
+				68CAE47418EEA08200608248 /* MOBAppShareViewController.h */,
+				68CAE47518EEA08200608248 /* MOBAppShareViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		68C6305518EAF53F00220536 /* Mapito simple */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68C6308818EAF54000220536 /* Build configuration list for PBXNativeTarget "Mapito simple" */;
+			buildPhases = (
+				D27B5C43B1E64E6EAB84F45A /* Check Pods Manifest.lock */,
+				68C6305218EAF53F00220536 /* Sources */,
+				68C6305318EAF53F00220536 /* Frameworks */,
+				68C6305418EAF53F00220536 /* Resources */,
+				A9EF2252865C49A5BCB0B06E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mapito simple";
+			productName = "Mapito simple";
+			productReference = 68C6305618EAF53F00220536 /* Mapito simple.app */;
+			productType = "com.apple.product-type.application";
+		};
+		68C6307618EAF53F00220536 /* Mapito simpleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68C6308B18EAF54000220536 /* Build configuration list for PBXNativeTarget "Mapito simpleTests" */;
+			buildPhases = (
+				68C6307318EAF53F00220536 /* Sources */,
+				68C6307418EAF53F00220536 /* Frameworks */,
+				68C6307518EAF53F00220536 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68C6307D18EAF53F00220536 /* PBXTargetDependency */,
+			);
+			name = "Mapito simpleTests";
+			productName = "Mapito simpleTests";
+			productReference = 68C6307718EAF53F00220536 /* Mapito simpleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		68C6304E18EAF53F00220536 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MOB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Mobera;
+				TargetAttributes = {
+					68C6307618EAF53F00220536 = {
+						TestTargetID = 68C6305518EAF53F00220536;
+					};
+				};
+			};
+			buildConfigurationList = 68C6305118EAF53F00220536 /* Build configuration list for PBXProject "Mapito simple" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 68C6304D18EAF53F00220536;
+			productRefGroup = 68C6305718EAF53F00220536 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68C6305518EAF53F00220536 /* Mapito simple */,
+				68C6307618EAF53F00220536 /* Mapito simpleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68C6305418EAF53F00220536 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C6307218EAF53F00220536 /* Images.xcassets in Resources */,
+				68C6306418EAF53F00220536 /* InfoPlist.strings in Resources */,
+				68C6306D18EAF53F00220536 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68C6307518EAF53F00220536 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C6308318EAF53F00220536 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9EF2252865C49A5BCB0B06E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D27B5C43B1E64E6EAB84F45A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68C6305218EAF53F00220536 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C690F818EC0310001B536A /* MOBDataManager.m in Sources */,
+				68C6911C18EC045A001B536A /* MOBAppCreateViewController.m in Sources */,
+				68C6910E18EC031A001B536A /* MOBFormPhotoCell.m in Sources */,
+				68C6911118EC031A001B536A /* MOBFormSwitchCell.m in Sources */,
+				68C690E918EC00BC001B536A /* Item.m in Sources */,
+				68C6911218EC031A001B536A /* MOBFormTableViewController.m in Sources */,
+				68C6910D18EC031A001B536A /* MOBFormGPSCell.m in Sources */,
+				68CAE47618EEA08200608248 /* MOBAppShareViewController.m in Sources */,
+				68C6911018EC031A001B536A /* MOBFormStepperCell.m in Sources */,
+				68C6911D18EC045A001B536A /* MOBAppFormEditViewController.m in Sources */,
+				68C6306618EAF53F00220536 /* main.m in Sources */,
+				68C6306A18EAF53F00220536 /* MOBAppDelegate.m in Sources */,
+				68C690F218EC0147001B536A /* Constants.m in Sources */,
+				68C690E018EC00BC001B536A /* Account.m in Sources */,
+				68A45F7D18EE813300D03D14 /* MOBAppDataViewController.m in Sources */,
+				68C690E318EC00BC001B536A /* History.m in Sources */,
+				68C6911F18EC045A001B536A /* MOBHomeTableViewController.m in Sources */,
+				68C6910B18EC031A001B536A /* MOBFormCell.m in Sources */,
+				68C690E618EC00BC001B536A /* App.m in Sources */,
+				68C690F718EC0310001B536A /* MOBAccount.m in Sources */,
+				68C6910C18EC031A001B536A /* MOBFormCodeScanner.m in Sources */,
+				68C6309318EB01C200220536 /* Model.xcdatamodeld in Sources */,
+				68C6912318EC0874001B536A /* MOBAppFormEditItemViewController.m in Sources */,
+				68C6911E18EC045A001B536A /* MOBAppFormViewController.m in Sources */,
+				68C6910F18EC031A001B536A /* MOBFormSelectboxCell.m in Sources */,
+				68C6911318EC031A001B536A /* MOBFormTextfieldCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68C6307318EAF53F00220536 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C6308518EAF53F00220536 /* Mapito_simpleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		68C6307D18EAF53F00220536 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68C6305518EAF53F00220536 /* Mapito simple */;
+			targetProxy = 68C6307C18EAF53F00220536 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		68C6306218EAF53F00220536 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68C6306318EAF53F00220536 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		68C6306B18EAF53F00220536 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68C6306C18EAF53F00220536 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		68C6308118EAF53F00220536 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68C6308218EAF53F00220536 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		68C6308618EAF54000220536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		68C6308718EAF54000220536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		68C6308918EAF54000220536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7A1298FCC2B49E0A16CD184 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mapito simple/Mapito simple-Prefix.pch";
+				INFOPLIST_FILE = "Mapito simple/Mapito simple-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		68C6308A18EAF54000220536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7A1298FCC2B49E0A16CD184 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mapito simple/Mapito simple-Prefix.pch";
+				INFOPLIST_FILE = "Mapito simple/Mapito simple-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		68C6308C18EAF54000220536 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mapito simple.app/Mapito simple";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mapito simple/Mapito simple-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Mapito simpleTests/Mapito simpleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		68C6308D18EAF54000220536 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mapito simple.app/Mapito simple";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mapito simple/Mapito simple-Prefix.pch";
+				INFOPLIST_FILE = "Mapito simpleTests/Mapito simpleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68C6305118EAF53F00220536 /* Build configuration list for PBXProject "Mapito simple" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68C6308618EAF54000220536 /* Debug */,
+				68C6308718EAF54000220536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68C6308818EAF54000220536 /* Build configuration list for PBXNativeTarget "Mapito simple" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68C6308918EAF54000220536 /* Debug */,
+				68C6308A18EAF54000220536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68C6308B18EAF54000220536 /* Build configuration list for PBXNativeTarget "Mapito simpleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68C6308C18EAF54000220536 /* Debug */,
+				68C6308D18EAF54000220536 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		68C6309118EB01C200220536 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				68C6309218EB01C200220536 /* Model.xcdatamodel */,
+			);
+			currentVersion = 68C6309218EB01C200220536 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 68C6304E18EAF53F00220536 /* Project object */;
+}
