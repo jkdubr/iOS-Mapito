@@ -32,10 +32,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self setTitle:@"Mapito"];
+    
     self.formValues = [[NSMutableDictionary alloc] init];
     [self setEditingForm:YES];
     self.formConfigItems = self.detail.o_formConfigItems;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated

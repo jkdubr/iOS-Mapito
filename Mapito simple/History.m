@@ -37,7 +37,7 @@
         NSMutableDictionary * tempData = [[NSMutableDictionary alloc] init];
         if ([item.o_data isKindOfClass:[NSDictionary class]]) {
             for (NSString * keyData in [item.o_data allKeys]) {
-                if ([item.o_data[keyData] isKindOfClass:[NSString class]] || [item.o_data[keyData] isKindOfClass:[NSNumber class]]) {
+                if ([item.o_data[keyData] isKindOfClass:[NSString class]] || [item.o_data[keyData] isKindOfClass:[NSNumber class]] || [item.o_data[keyData] isKindOfClass:[NSArray class]]) {
                     tempData[keyData] = item.o_data[keyData];
                 }
             }
