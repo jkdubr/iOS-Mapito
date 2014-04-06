@@ -49,7 +49,6 @@
     
   //  NSLog(@"x %@", self.formConfig);
     
-    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,12 +112,5 @@
     [self.navigationController setViewControllers:@[self.navigationController.viewControllers[0]] animated:YES];
 }
 
-- (IBAction)share:(UIButton *)sender {
-    
-    [[self.detail saveVersion] subscribeNext:^(History * history){
-        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[history linkMap]] applicationActivities:nil];
-        [self presentViewController:activityVC animated:YES completion:nil];
-    }];
-}
 
 @end

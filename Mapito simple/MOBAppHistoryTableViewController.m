@@ -34,6 +34,8 @@
 {
     [super viewDidLoad];
     
+    [self setTitle:@"Mapito"];
+    
     dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd' 'HH:mm:ss"];//yyyy-MM-dd'T'HH:mm:ssZ
     
@@ -55,6 +57,20 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if ([[self.fetchedResultsController.sections objectAtIndex:0] numberOfObjects]==0)
+    {
+        [[self.detail saveVersion] subscribeNext:^(History * history)
+        {
+            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[history linkMap]] applicationActivities:nil];
+            [self presentViewController:activityVC animated:YES completion:nil];
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -171,4 +187,14 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
 }
+
+#pragma mark - actoins
+- (IBAction)share:(UIBarButtonItem *)sender {
+    [[self.detail saveVersion] subscribeNext:^(History * history){
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[history linkMap]] applicationActivities:nil];
+        [self presentViewController:activityVC animated:YES completion:nil];
+    }];
+}
+
+
 @end

@@ -77,7 +77,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSV-8e-OGH">
-                                    <rect key="frame" x="20" y="7" width="54" height="30"/>
+                                    <rect key="frame" x="57" y="7" width="54" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Preview">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,18 +86,8 @@
                                         <segue destination="Str-Di-OvL" kind="push" identifier="toData" id="Fc6-2E-9Qc"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhE-PE-tCO">
-                                    <rect key="frame" x="260" y="7" width="40" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Share">
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="share:" destination="wuf-xe-Hkw" eventType="touchUpInside" id="8UK-s8-sKO"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOS-SR-YWo">
-                                    <rect key="frame" x="99" y="7" width="30" height="30"/>
+                                    <rect key="frame" x="145" y="7" width="30" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Edit">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,9 +97,9 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRa-7I-BrN">
-                                    <rect key="frame" x="171" y="7" width="49" height="30"/>
+                                    <rect key="frame" x="212" y="7" width="40" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="History">
+                                    <state key="normal" title="Share">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -401,7 +391,13 @@
                             <outlet property="delegate" destination="hEc-nc-qYn" id="wUX-HW-nD7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="1K2-Cv-nZH"/>
+                    <navigationItem key="navigationItem" id="1K2-Cv-nZH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="rlV-nf-Tgj">
+                            <connections>
+                                <action selector="share:" destination="hEc-nc-qYn" id="LlK-AQ-kJ5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVP-Qk-Xu8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

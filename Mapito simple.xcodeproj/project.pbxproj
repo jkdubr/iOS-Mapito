@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		681123E018F187650036A820 /* MOBFormTagsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 681123DF18F187650036A820 /* MOBFormTagsCollectionCell.m */; };
 		68A45F7D18EE813300D03D14 /* MOBAppDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A45F7C18EE813300D03D14 /* MOBAppDataViewController.m */; };
 		68A45F7F18EE841700D03D14 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A45F7E18EE841700D03D14 /* MapKit.framework */; };
 		68C6305A18EAF53F00220536 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6305918EAF53F00220536 /* Foundation.framework */; };
@@ -48,7 +49,6 @@
 		68D5DF2718EF3FC00062A5B9 /* MOBAppDataDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D5DF2618EF3FC00062A5B9 /* MOBAppDataDetailViewController.m */; };
 		68D5DF2D18EFEF590062A5B9 /* MOBFormNumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D5DF2C18EFEF590062A5B9 /* MOBFormNumberCell.m */; };
 		68D5DF3318EFF3FD0062A5B9 /* MOBFormTagsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D5DF3218EFF3FD0062A5B9 /* MOBFormTagsCell.m */; };
-		68D5DF3A18F061500062A5B9 /* MOBFormTagsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D5DF3918F061500062A5B9 /* MOBFormTagsCollectionCell.m */; };
 		A8A2B39F967D4BA7BB97CB16 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76794C86C2BC4F9ABAC7803E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		681123DE18F187650036A820 /* MOBFormTagsCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormTagsCollectionCell.h; path = ../../shared/Forms/MOBFormTagsCollectionCell.h; sourceTree = "<group>"; };
+		681123DF18F187650036A820 /* MOBFormTagsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormTagsCollectionCell.m; path = ../../shared/Forms/MOBFormTagsCollectionCell.m; sourceTree = "<group>"; };
 		68A45F7B18EE813300D03D14 /* MOBAppDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAppDataViewController.h; sourceTree = "<group>"; };
 		68A45F7C18EE813300D03D14 /* MOBAppDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAppDataViewController.m; sourceTree = "<group>"; };
 		68A45F7E18EE841700D03D14 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -134,8 +136,6 @@
 		68D5DF2C18EFEF590062A5B9 /* MOBFormNumberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormNumberCell.m; path = ../../shared/Forms/MOBFormNumberCell.m; sourceTree = "<group>"; };
 		68D5DF3118EFF3FD0062A5B9 /* MOBFormTagsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormTagsCell.h; path = ../../shared/Forms/MOBFormTagsCell.h; sourceTree = "<group>"; };
 		68D5DF3218EFF3FD0062A5B9 /* MOBFormTagsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormTagsCell.m; path = ../../shared/Forms/MOBFormTagsCell.m; sourceTree = "<group>"; };
-		68D5DF3818F061500062A5B9 /* MOBFormTagsCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBFormTagsCollectionCell.h; sourceTree = "<group>"; };
-		68D5DF3918F061500062A5B9 /* MOBFormTagsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBFormTagsCollectionCell.m; sourceTree = "<group>"; };
 		76794C86C2BC4F9ABAC7803E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A1298FCC2B49E0A16CD184 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -307,8 +307,8 @@
 				68D5DF2C18EFEF590062A5B9 /* MOBFormNumberCell.m */,
 				68D5DF3118EFF3FD0062A5B9 /* MOBFormTagsCell.h */,
 				68D5DF3218EFF3FD0062A5B9 /* MOBFormTagsCell.m */,
-				68D5DF3818F061500062A5B9 /* MOBFormTagsCollectionCell.h */,
-				68D5DF3918F061500062A5B9 /* MOBFormTagsCollectionCell.m */,
+				681123DE18F187650036A820 /* MOBFormTagsCollectionCell.h */,
+				681123DF18F187650036A820 /* MOBFormTagsCollectionCell.m */,
 			);
 			name = form;
 			sourceTree = "<group>";
@@ -487,6 +487,7 @@
 				68C6910D18EC031A001B536A /* MOBFormGPSCell.m in Sources */,
 				68C6911018EC031A001B536A /* MOBFormStepperCell.m in Sources */,
 				68C6911D18EC045A001B536A /* MOBAppFormEditViewController.m in Sources */,
+				681123E018F187650036A820 /* MOBFormTagsCollectionCell.m in Sources */,
 				68C6306618EAF53F00220536 /* main.m in Sources */,
 				68C6306A18EAF53F00220536 /* MOBAppDelegate.m in Sources */,
 				68C690F218EC0147001B536A /* Constants.m in Sources */,
@@ -498,7 +499,6 @@
 				68C690E618EC00BC001B536A /* App.m in Sources */,
 				68C690F718EC0310001B536A /* MOBAccount.m in Sources */,
 				68C6910C18EC031A001B536A /* MOBFormCodeScanner.m in Sources */,
-				68D5DF3A18F061500062A5B9 /* MOBFormTagsCollectionCell.m in Sources */,
 				68D5DF2D18EFEF590062A5B9 /* MOBFormNumberCell.m in Sources */,
 				68C6309318EB01C200220536 /* Model.xcdatamodeld in Sources */,
 				68D5DF2718EF3FC00062A5B9 /* MOBAppDataDetailViewController.m in Sources */,

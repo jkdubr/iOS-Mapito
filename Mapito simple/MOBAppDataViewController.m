@@ -72,8 +72,8 @@
     self.navigationItem.titleView = self.searchBar;
     
     CGRect frame = self.mapView.frame;
-    frame.origin.y=64;
-    frame.size.height = frame.size.height-64-216;
+    frame.origin.y=0;
+    frame.size.height = frame.size.height-216;
     
     self.tableView = [[UITableView alloc] initWithFrame:frame];
     [self.tableView setDelegate:self];
