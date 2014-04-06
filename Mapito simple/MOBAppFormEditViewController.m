@@ -90,7 +90,7 @@
     if (self.tableView == tableView) {
         return @"Edit your application";
     }else if (self.tableViewFormTypes == tableView){
-        return @"Add new form type";
+        return @"Add new form element";
     }
     return @"";
 }

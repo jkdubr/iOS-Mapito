@@ -76,7 +76,6 @@
         NSString * gistId = json[@"id"];
         [self setO_gistId:gistId];
         NSString * link = [NSString stringWithFormat:@"http://geojson.io/#id=gist:anonymous/%@", gistId];
-        NSLog(@"gist %@ %@", gistId, link);
         return link;
     }];
 }

@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Home Table View Controller - Root View Controller-->
+        <!--Home Table View Controller-->
         <scene sceneID="BU5-Oz-eCQ">
             <objects>
                 <tableViewController id="GWX-Rz-29q" customClass="MOBHomeTableViewController" sceneMemberID="viewController">
@@ -17,9 +17,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fJ-MK-ewI">
-                                    <rect key="frame" x="222" y="13" width="46" height="30"/>
+                                    <rect key="frame" x="103" y="13" width="114" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Create">
+                                    <state key="normal" title="Create new form">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -53,7 +53,7 @@
                             <outlet property="delegate" destination="GWX-Rz-29q" id="cuP-PQ-V5w"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="sQQ-hb-JKm"/>
+                    <navigationItem key="navigationItem" id="sQQ-hb-JKm"/>
                     <connections>
                         <segue destination="HbM-Pu-Z9Y" kind="push" identifier="toCustom" id="tzx-U5-blN"/>
                         <segue destination="L4P-dc-LOv" kind="push" identifier="toTemplate" id="VJh-Uc-IUu"/>
@@ -195,7 +195,7 @@
                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -410,7 +410,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="n1V-5H-YbG"/>
-        <segue reference="0UX-9C-dVN"/>
+        <segue reference="xgA-v8-VUu"/>
+        <segue reference="VJh-Uc-IUu"/>
     </inferredMetricsTieBreakers>
 </document>

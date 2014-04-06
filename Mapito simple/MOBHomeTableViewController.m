@@ -89,7 +89,7 @@
     if (app.o_type == kMOBAppTypePrivate) {
         return @"Private layers";
     }else if (app.o_type == kMOBAppTypeTemplate){
-        return @"Templates";
+        return @"Prepared Templates";
     }else if (app.o_type == kMOBAppTypeShared){
         return @"Shared Layers";
     }
@@ -102,9 +102,8 @@
     if (app.o_type == kMOBAppTypePrivate) {
         [self performSegueWithIdentifier:@"toLayer" sender:app];
     }else if (app.o_type == kMOBAppTypeTemplate){
-   //     [self performSegueWithIdentifier:@"toTemplate" sender:app];
         App * appCopied = [app copyAsTemplate];
-        NSLog(@"ll %@ %@", appCopied.o_title, appCopied.o_formConfigItems);
+        [self performSegueWithIdentifier:@"toLayer" sender:appCopied];
     }
 }
 
