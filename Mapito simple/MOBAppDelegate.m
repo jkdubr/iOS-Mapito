@@ -8,6 +8,8 @@
 
 #import "MOBAppDelegate.h"
 
+#import "App.h"
+
 @implementation MOBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -27,9 +29,9 @@
     
     [[UIButton appearance] setTitleColor:[UIColor colorWithRed:0.00 green:0.71 blue:0.27 alpha:1.00] forState:UIControlStateNormal];
     
-
-    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+        [App reloadTemplates];
     
     return YES;
 }

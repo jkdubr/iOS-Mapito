@@ -38,7 +38,6 @@
 + (instancetype)app
 {
     App * app = [NSEntityDescription insertNewObjectForEntityForName:@"App" inManagedObjectContext:[[MOBDataManager sharedManager] managedObjectContext]];
-    [[MOBDataManager sharedManager] saveContext];
     return app;
 }
 
@@ -61,13 +60,58 @@
                                   @"title"   : @"Position"
                                   }
                               ];
+    [[MOBDataManager sharedManager] saveContext];
     return app;
 }
 
-#pragma mark -
-- (BOOL)addItem:(NSDictionary *)values{
++ (void)reloadTemplates
+{
+    NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"App"];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"o_type = %i", kMOBAppTypeTemplate]];
+    for (App * a in [[[MOBDataManager sharedManager] managedObjectContext] executeFetchRequest:fetchRequest error:NULL]) {
+        [[[MOBDataManager sharedManager] managedObjectContext] deleteObject:a];
+    }
     
-   // NSLog(@"config %@",self.o_formConfig);
+    App * app = [App app];
+    [app setO_title:@"template-1"];
+    [app setO_type:kMOBAppTypeTemplate];
+    [app setO_title:@"Flowers"];
+    [app setO_formConfigItems:@[
+                                @{
+                                    @"type": @"textfield",
+                                    @"name": @"title",
+                                    @"title": @"Flower"
+                                    },
+                                @{
+                                    @"type": @"number",
+                                    @"name": @"height",
+                                    @"title": @"Height [cm]"
+                                    },
+                                @{
+                                    @"type"    : @"loc",
+                                    @"name"    : @"loc",
+                                    @"title"   : @"Position"
+                                    }
+                                ]];
+    [[MOBDataManager sharedManager] saveContext];
+}
+
+#pragma mark -
+- (instancetype)copyAsTemplate
+{
+    App * app = [App app];
+    [app setO_formConfigItems:[self.o_formConfigItems copy]];
+    [app setO_formConfigMapping:[self.o_formConfigMapping copy]];
+    [app setO_title:[self.o_title copy]];
+    [app setO_type:kMOBAppTypePrivate];
+    [[MOBDataManager sharedManager] saveContext];
+    return app;
+}
+
+- (BOOL)addItem:(NSDictionary *)values
+{
+    
+    // NSLog(@"config %@",self.o_formConfig);
     //NSLog(@"data %@",values);
     
     NSMutableDictionary * itemData = [[NSMutableDictionary alloc] init];

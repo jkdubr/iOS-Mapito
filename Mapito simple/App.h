@@ -17,6 +17,7 @@ typedef NS_ENUM(int16_t, kMOBAppType) {
 
 @interface App : NSManagedObject
 
++ (void)reloadTemplates;
 + (instancetype) app;
 + (instancetype) appDefault;
 /*
@@ -32,6 +33,8 @@ typedef NS_ENUM(int16_t, kMOBAppType) {
 
 -(BOOL) addItem:(NSDictionary *) values;
 - (void)removeItemsObject:(Item *)value;
+
+- (instancetype)copyAsTemplate;
 
 //@return History
 - (RACSignal *) saveVersion;

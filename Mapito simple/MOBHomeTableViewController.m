@@ -39,7 +39,7 @@
     self.clearsSelectionOnViewWillAppear = YES;
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"App"];
-    NSSortDescriptor *descriptor1 = [NSSortDescriptor sortDescriptorWithKey:@"o_type" ascending:NO];
+    NSSortDescriptor *descriptor1 = [NSSortDescriptor sortDescriptorWithKey:@"o_type" ascending:YES];
     NSSortDescriptor *descriptor2 = [NSSortDescriptor sortDescriptorWithKey:@"o_title" ascending:NO];
     fetchRequest.sortDescriptors = @[descriptor1,descriptor2];
     
@@ -57,6 +57,13 @@
     [super viewWillAppear:animated];
     
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,7 +102,9 @@
     if (app.o_type == kMOBAppTypePrivate) {
         [self performSegueWithIdentifier:@"toLayer" sender:app];
     }else if (app.o_type == kMOBAppTypeTemplate){
-        [self performSegueWithIdentifier:@"toTemplate" sender:app];
+   //     [self performSegueWithIdentifier:@"toTemplate" sender:app];
+        App * appCopied = [app copyAsTemplate];
+        NSLog(@"ll %@ %@", appCopied.o_title, appCopied.o_formConfigItems);
     }
 }
 
