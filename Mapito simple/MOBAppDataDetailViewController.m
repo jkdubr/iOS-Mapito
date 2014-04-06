@@ -37,7 +37,7 @@
     NSLog(@"data %@",self.detail.o_data);
     
     NSMutableArray * temp = [[NSMutableArray alloc] init];
-    for (NSMutableDictionary * t in self.detail.app.o_formConfig[@"sections"][0][@"items"]) {
+    for (NSMutableDictionary * t in self.detail.app.o_formConfigItems) {
         NSMutableDictionary * t1 = [NSMutableDictionary dictionaryWithDictionary:t];
         if (self.detail.o_data[t[@"name"]]) {
             t1[@"value"] = self.detail.o_data[t[@"name"]];
@@ -45,11 +45,7 @@
         [temp addObject:t1];
     }
     
-    self.formConfig = @[
-                        @{
-                            @"items" : temp
-                            }
-                        ];
+    self.formConfigItems = temp;
     
     
 }

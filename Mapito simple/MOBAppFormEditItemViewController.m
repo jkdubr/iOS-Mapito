@@ -27,9 +27,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.formConfig = @[
-                        self.config
-                        ];
+    self.formConfigItems = self.config[@"items"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,24 +39,25 @@
 #pragma mark - actions
 
 
-- (IBAction)save:(UIBarButtonItem *)sender {
-    // self.config[@"title"] = self.formValues[@"title"][@"value"];
-    /*
-     NSMutableDictionary * values = @{
-     @"name" : self.formValues[@"title"][@"value"],
-     @"title"   :   self.formValues[@"title"][@"value"],
-     @"type"    :   self.config[@"name"]
-     };
-     */
-    
-    self.valuesReturn[@"name"] = self.formValues[@"title"][@"value"];
-    self.valuesReturn[@"title"] = self.formValues[@"title"][@"value"];
+- (IBAction)save:(UIBarButtonItem *)sender
+{
     self.valuesReturn[@"type"] = self.config[@"name"];
+    
+    for (NSString * key in self.formValues.allKeys) {
+        NSString * val = self.formValues[key][@"value"];
+        if (val) {
+            self.valuesReturn[key] =val;
+            if ([key isEqualToString:@"title"]) {
+                self.valuesReturn[@"name"] =val;
+            }
+        }
+    }
     
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)remove:(UIBarButtonItem *)sender {
+- (IBAction)remove:(UIBarButtonItem *)sender
+{
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end

@@ -38,24 +38,28 @@
 {
     [super viewDidLoad];
     
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    
     self.tableViewFormTypes = [[UITableView alloc] initWithFrame:[[[[[UIApplication sharedApplication] keyWindow] rootViewController] view] frame]  style:UITableViewStyleGrouped];
+    
     [self.tableViewFormTypes setDelegate:self];
     [self.tableViewFormTypes setDataSource:self];
     [self.tableViewFormTypes registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
-    self.resultsFormConfig = [NSMutableArray arrayWithArray:self.detail.o_formConfig[@"sections"][0][@"items"]];
+    self.resultsFormConfig = [NSMutableArray arrayWithArray:self.detail.o_formConfigItems];
     self.resultsFormTypes = [MOBFormCell allTypes];
     
     
-      [self.textFieldTitle setText:self.detail.o_title];
-    RAC(self.detail, o_title) = self.textFieldTitle.rac_textSignal;
+    [self.textFieldTitle setText:self.detail.o_title];
+    [self.textFieldTitle.rac_textSignal subscribeNext:^(NSString * val){
+        [self.detail setO_title:val];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,17 +85,26 @@
     return 0;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
-    return self.detail.o_title;
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (self.tableView == tableView) {
+        return @"Edit your application";
+    }else if (self.tableViewFormTypes == tableView){
+        return @"Add new form type";
+    }
+    return @"";
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    return [NSString stringWithFormat:@"Application: %@", self.detail.o_title];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
+    
     NSDictionary * item;
     
     if (self.tableView == tableView) {
@@ -99,15 +112,16 @@
     }else if (self.tableViewFormTypes == tableView){
         item = self.resultsFormTypes[indexPath.row];
     }
-    
-    [cell.textLabel setText:[item objectForKey:@"title"]];
+    [cell.textLabel setText:item[@"title"]];
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (self.tableViewFormTypes == tableView) {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.tableView == tableView) {
+        ;
+    } else if (self.tableViewFormTypes == tableView) {
         NSDictionary * config = [self.resultsFormTypes objectAtIndex:indexPath.row];
         
         [UIView animateWithDuration:0.5 animations:^(void){
@@ -118,6 +132,7 @@
         }];
     }
 }
+
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -139,8 +154,10 @@
 
 #pragma mark - actions
 
-- (IBAction)add:(UIBarButtonItem *)sender {
-    [self.tableViewFormTypes setAlpha:0];
+- (IBAction)add:(UIBarButtonItem *)sender
+{
+    [self.view endEditing:YES];
+    [self.tableViewFormTypes setAlpha:0.0];
     [self.tableViewFormTypes reloadData];
     [[[[[UIApplication sharedApplication] keyWindow] rootViewController] view] addSubview:self.tableViewFormTypes];
     
@@ -161,29 +178,13 @@
             mapping[@"loc"] = item[@"name"];
         }
     }
-    NSLog(@"kk %@", self.resultsFormConfig);
-    self.detail.o_formConfig = @{
-                                 @"sections" : @[
-                                         @{
-                                             @"items" :  self.resultsFormConfig
-                                             }
-                                         ],
-                                 @"mapping" :   mapping
-                                 };
+    
+    self.detail.o_formConfigItems = self.resultsFormConfig;
+    self.detail.o_formConfigMapping = mapping;
+    
     [[MOBDataManager sharedManager] saveContext];
     
     [self performSegueWithIdentifier:@"toLayer" sender:nil];
-    /*
-     [[self.detail saveApp] subscribeNext:^(id x){
-     [self performSegueWithIdentifier:@"toProjects" sender:nil];
-     } error:^(NSError * error){
-     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Error saving" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles: nil];
-     [alert show];
-     } completed:^(void){
-     
-     }];
-     */
-    
 }
 
 
@@ -196,12 +197,11 @@
         
         [segue.destinationViewController setValuesReturn:values];
         [segue.destinationViewController setConfig:sender];
-
+        
         [segue.destinationViewController setEditingForm:YES];
     }else if ([segue.identifier isEqualToString:@"toLayer"]){
         [segue.destinationViewController setDetail:self.detail];
     }
 }
-
 
 @end

@@ -75,6 +75,16 @@
     return [[self.fetchedResultsController.sections objectAtIndex:section] numberOfObjects];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"Layer sharing history";
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    return [NSString stringWithFormat:@"Application: %@", self.detail.o_title];
+}
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     History * history = [_fetchedResultsController objectAtIndexPath:indexPath];
@@ -85,7 +95,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-   
+    
     [self configureCell:cell atIndexPath:indexPath];
     
     return cell;

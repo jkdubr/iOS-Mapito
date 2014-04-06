@@ -12,7 +12,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[UIToolbar appearance] setBackgroundColor:[UIColor colorWithRed:0.88 green:0.80 blue:0.56 alpha:1.00]];
+    [[UIWindow appearance] setTintColor:[UIColor colorWithRed:0.88 green:0.80 blue:0.56 alpha:1.00]];
+    
+    [[UILabel appearance] setTextColor:[UIColor colorWithRed:0.27 green:0.15 blue:0.08 alpha:1.00]];
+    [[UITableViewCell appearance] setTintColor:[UIColor colorWithRed:0.07 green:0.71 blue:0.26 alpha:1.00]];
+    [[UITableView appearance] setBackgroundColor:[UIColor colorWithRed:0.95 green:0.96 blue:0.92 alpha:1.00]];
+    
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.94 green:0.86 blue:0.58 alpha:1.00]}];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.27 green:0.15 blue:0.08 alpha:1.00]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+
+    
+    [[UIButton appearance] setTitleColor:[UIColor colorWithRed:0.00 green:0.71 blue:0.27 alpha:1.00] forState:UIControlStateNormal];
+    
+
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     return YES;
 }
 							

@@ -35,7 +35,7 @@
     // Do any additional setup after loading the view.
     self.formValues = [[NSMutableDictionary alloc] init];
     [self setEditingForm:YES];
-    self.formConfig = self.detail.o_formConfig[@"sections"];
+    self.formConfigItems = self.detail.o_formConfigItems;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -44,7 +44,7 @@
     
     
     
-    NSLog(@"x %@", self.formConfig);
+  //  NSLog(@"x %@", self.formConfig);
     
     [self.tableView reloadData];
 }

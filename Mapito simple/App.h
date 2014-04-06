@@ -18,11 +18,12 @@ typedef NS_ENUM(int16_t, kMOBAppType) {
 @interface App : NSManagedObject
 
 + (instancetype) app;
-+ (NSDictionary *) defaultConfig;
++ (instancetype) appDefault;
 /*
 
  */
-@property (nonatomic, retain) NSDictionary * o_formConfig;
+@property (nonatomic, retain) NSArray * o_formConfigItems;
+@property (nonatomic, retain) NSDictionary * o_formConfigMapping;
 @property (nonatomic, retain) NSString * o_id;
 @property (nonatomic, retain) NSString * o_title;
 @property (nonatomic) kMOBAppType  o_type;

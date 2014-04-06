@@ -7,7 +7,8 @@
         <attribute name="o_token" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="App" representedClassName="App" syncable="YES">
-        <attribute name="o_formConfig" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="o_formConfigItems" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="o_formConfigMapping" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="o_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="o_title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="o_type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -35,7 +36,7 @@
     </entity>
     <elements>
         <element name="Account" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="App" positionX="-54" positionY="-9" width="128" height="135"/>
+        <element name="App" positionX="-54" positionY="-9" width="128" height="150"/>
         <element name="History" positionX="-45" positionY="72" width="128" height="118"/>
         <element name="Item" positionX="-36" positionY="9" width="128" height="193"/>
     </elements>

@@ -30,17 +30,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     
-    self.formConfig = @[
+    
+    self.formConfigItems = @[
                         @{
-                            @"items"    :   @[
-                                    @{
-                                        @"type" :   @"textfield",
-                                        @"title"  :   @"Application name",
-                                        @"name" :   @"name"
-                                        }
-                                    ]
+                            @"type" :   @"textfield",
+                            @"title"  :   @"Application name",
+                            @"name" :   @"name"
                             }
                         ];
     
@@ -72,12 +68,11 @@
 #pragma mark - actions
 - (IBAction)go:(UIBarButtonItem *)sender {
     NSString * title = self.formValues[@"name"][@"value"];
-
     
     
-    App * app = [App app];
+    
+    App * app = [App appDefault];
     [app setO_title:title];
-    [app setO_formConfig:[App defaultConfig]];
     [[MOBDataManager sharedManager] saveContext];
     
     [self performSegueWithIdentifier:@"toFormEdit" sender:app];

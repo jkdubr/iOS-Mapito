@@ -46,6 +46,9 @@
 		68C6912318EC0874001B536A /* MOBAppFormEditItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C6912218EC0874001B536A /* MOBAppFormEditItemViewController.m */; };
 		68D5DF2418EF2E960062A5B9 /* MOBAppHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D5DF2318EF2E960062A5B9 /* MOBAppHistoryTableViewController.m */; };
 		68D5DF2718EF3FC00062A5B9 /* MOBAppDataDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D5DF2618EF3FC00062A5B9 /* MOBAppDataDetailViewController.m */; };
+		68D5DF2D18EFEF590062A5B9 /* MOBFormNumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D5DF2C18EFEF590062A5B9 /* MOBFormNumberCell.m */; };
+		68D5DF3318EFF3FD0062A5B9 /* MOBFormTagsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D5DF3218EFF3FD0062A5B9 /* MOBFormTagsCell.m */; };
+		68D5DF3A18F061500062A5B9 /* MOBFormTagsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D5DF3918F061500062A5B9 /* MOBFormTagsCollectionCell.m */; };
 		A8A2B39F967D4BA7BB97CB16 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76794C86C2BC4F9ABAC7803E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +130,12 @@
 		68D5DF2318EF2E960062A5B9 /* MOBAppHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBAppHistoryTableViewController.m; path = "../../Mapito Simple/Mapito simple/MOBAppHistoryTableViewController.m"; sourceTree = "<group>"; };
 		68D5DF2518EF3FC00062A5B9 /* MOBAppDataDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBAppDataDetailViewController.h; path = "../../Mapito Simple/Mapito simple/MOBAppDataDetailViewController.h"; sourceTree = "<group>"; };
 		68D5DF2618EF3FC00062A5B9 /* MOBAppDataDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBAppDataDetailViewController.m; path = "../../Mapito Simple/Mapito simple/MOBAppDataDetailViewController.m"; sourceTree = "<group>"; };
+		68D5DF2B18EFEF590062A5B9 /* MOBFormNumberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormNumberCell.h; path = ../../shared/Forms/MOBFormNumberCell.h; sourceTree = "<group>"; };
+		68D5DF2C18EFEF590062A5B9 /* MOBFormNumberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormNumberCell.m; path = ../../shared/Forms/MOBFormNumberCell.m; sourceTree = "<group>"; };
+		68D5DF3118EFF3FD0062A5B9 /* MOBFormTagsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormTagsCell.h; path = ../../shared/Forms/MOBFormTagsCell.h; sourceTree = "<group>"; };
+		68D5DF3218EFF3FD0062A5B9 /* MOBFormTagsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormTagsCell.m; path = ../../shared/Forms/MOBFormTagsCell.m; sourceTree = "<group>"; };
+		68D5DF3818F061500062A5B9 /* MOBFormTagsCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBFormTagsCollectionCell.h; sourceTree = "<group>"; };
+		68D5DF3918F061500062A5B9 /* MOBFormTagsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBFormTagsCollectionCell.m; sourceTree = "<group>"; };
 		76794C86C2BC4F9ABAC7803E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A1298FCC2B49E0A16CD184 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +202,7 @@
 		68C6305F18EAF53F00220536 /* Mapito simple */ = {
 			isa = PBXGroup;
 			children = (
+				68D5DF3418F003E70062A5B9 /* test */,
 				68C6912018EC0461001B536A /* controller */,
 				68C630AF18EBDAFA00220536 /* shared */,
 				68C6308F18EB01A500220536 /* view */,
@@ -293,6 +303,12 @@
 				68C6910618EC031A001B536A /* MOBFormSwitchCell.m */,
 				68C6910918EC031A001B536A /* MOBFormTextfieldCell.h */,
 				68C6910A18EC031A001B536A /* MOBFormTextfieldCell.m */,
+				68D5DF2B18EFEF590062A5B9 /* MOBFormNumberCell.h */,
+				68D5DF2C18EFEF590062A5B9 /* MOBFormNumberCell.m */,
+				68D5DF3118EFF3FD0062A5B9 /* MOBFormTagsCell.h */,
+				68D5DF3218EFF3FD0062A5B9 /* MOBFormTagsCell.m */,
+				68D5DF3818F061500062A5B9 /* MOBFormTagsCollectionCell.h */,
+				68D5DF3918F061500062A5B9 /* MOBFormTagsCollectionCell.m */,
 			);
 			name = form;
 			sourceTree = "<group>";
@@ -318,6 +334,13 @@
 				68D5DF2618EF3FC00062A5B9 /* MOBAppDataDetailViewController.m */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		68D5DF3418F003E70062A5B9 /* test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,6 +482,7 @@
 				68C6910E18EC031A001B536A /* MOBFormPhotoCell.m in Sources */,
 				68C6911118EC031A001B536A /* MOBFormSwitchCell.m in Sources */,
 				68C690E918EC00BC001B536A /* Item.m in Sources */,
+				68D5DF3318EFF3FD0062A5B9 /* MOBFormTagsCell.m in Sources */,
 				68C6911218EC031A001B536A /* MOBFormTableViewController.m in Sources */,
 				68C6910D18EC031A001B536A /* MOBFormGPSCell.m in Sources */,
 				68C6911018EC031A001B536A /* MOBFormStepperCell.m in Sources */,
@@ -474,6 +498,8 @@
 				68C690E618EC00BC001B536A /* App.m in Sources */,
 				68C690F718EC0310001B536A /* MOBAccount.m in Sources */,
 				68C6910C18EC031A001B536A /* MOBFormCodeScanner.m in Sources */,
+				68D5DF3A18F061500062A5B9 /* MOBFormTagsCollectionCell.m in Sources */,
+				68D5DF2D18EFEF590062A5B9 /* MOBFormNumberCell.m in Sources */,
 				68C6309318EB01C200220536 /* Model.xcdatamodeld in Sources */,
 				68D5DF2718EF3FC00062A5B9 /* MOBAppDataDetailViewController.m in Sources */,
 				68C6912318EC0874001B536A /* MOBAppFormEditItemViewController.m in Sources */,
