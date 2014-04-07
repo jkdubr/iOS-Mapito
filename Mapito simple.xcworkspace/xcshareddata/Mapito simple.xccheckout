@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2AE7E129-94AC-46E4-80D2-4AFE81C44D21</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Mapito simple</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E02EA8B1-7D4E-4560-88C9-8E2E63922342</key>
+		<string>https://bitbucket.org/jkdubr/ios-mapito-simple.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Mapito simple.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E02EA8B1-7D4E-4560-88C9-8E2E63922342</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/jkdubr/ios-mapito-simple.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E02EA8B1-7D4E-4560-88C9-8E2E63922342</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E02EA8B1-7D4E-4560-88C9-8E2E63922342</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Mapito Simple</string>
+		</dict>
+	</array>
+</dict>
+</plist>
