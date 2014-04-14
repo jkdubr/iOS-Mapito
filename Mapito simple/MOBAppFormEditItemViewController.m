@@ -8,6 +8,8 @@
 
 #import "MOBAppFormEditItemViewController.h"
 
+#import "App.h"
+
 @interface MOBAppFormEditItemViewController ()
 
 @end
@@ -27,7 +29,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.formConfigItems = self.config[@"items"];
+    [self.navigationItem.rightBarButtonItem setEnabled:NO];
+    if ([self.config[@"items"] isKindOfClass:[NSArray class]]) {
+        self.formConfigItems = self.config[@"items"];
+    }
+
+
+   // NSLog(@"items %@", self.formConfigItems);
+    NSLog(@"ahoj");
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,23 +50,34 @@
 
 - (IBAction)save:(UIBarButtonItem *)sender
 {
-    self.valuesReturn[@"type"] = self.config[@"name"];
+    NSMutableDictionary * valuesReturn = [[NSMutableDictionary alloc] init];
+    valuesReturn[@"type"] = self.config[@"name"];
     
     for (NSString * key in self.formValues.allKeys) {
         NSString * val = self.formValues[key][@"value"];
         if (val) {
-            self.valuesReturn[key] =val;
+            valuesReturn[key] =val;
             if ([key isEqualToString:@"title"]) {
-                self.valuesReturn[@"name"] =val;
+                valuesReturn[@"name"] =val;
             }
         }
     }
+    [self.resultsFormConfig addObject:valuesReturn];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToViewController:self.navigationController.viewControllers[self.navigationController.viewControllers.count-3] animated:YES];
 }
 
 - (IBAction)remove:(UIBarButtonItem *)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+#pragma mark - MOBFormTableViewControllerDelegate
+- (void)formTableViewControllerChangeElement:(MOBFormCell *)formCell withName:(NSString *)name withValue:(id)value
+{
+    [super formTableViewControllerChangeElement:formCell withName:name withValue:value];
+    
+    if ([name isEqualToString:@"title"]) {
+        [self.navigationItem.rightBarButtonItem setEnabled:([value length]>0)];
+    }
 }
 @end

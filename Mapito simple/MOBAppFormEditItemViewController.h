@@ -8,9 +8,12 @@
 
 #import "MOBFormTableViewController.h"
 
+@class App;
+
 @interface MOBAppFormEditItemViewController : MOBFormTableViewController
 
+@property(nonatomic, strong) App * detail;
 @property(nonatomic, strong) NSDictionary * config;
-@property(nonatomic, strong) NSMutableDictionary * valuesReturn;
+@property(nonatomic, strong) NSMutableArray * resultsFormConfig;
 
 @end

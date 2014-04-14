@@ -13,16 +13,16 @@ typedef NS_ENUM(int16_t, kMOBAppType) {
 };
 
 
-@class History, Item;
+@class History, Item, Workspace;
 
-@interface App : NSManagedObject
+@interface App : NSManagedObject<MOBManagedObjectSerialization>
 
 + (void)reloadTemplates;
+
++ (instancetype) appWithId: (NSString *) id;
 + (instancetype) app;
 + (instancetype) appDefault;
-/*
 
- */
 @property (nonatomic, retain) NSArray * o_formConfigItems;
 @property (nonatomic, retain) NSDictionary * o_formConfigMapping;
 @property (nonatomic, retain) NSString * o_id;
@@ -31,8 +31,10 @@ typedef NS_ENUM(int16_t, kMOBAppType) {
 @property (nonatomic, retain) NSSet *items;
 @property (nonatomic, retain) NSSet *history;
 
--(BOOL) addItem:(NSDictionary *) values;
-- (void)removeItemsObject:(Item *)value;
+@property (nonatomic, retain) Workspace *workspace;
+
+- (BOOL) addItem:(NSDictionary *) values;
+- (void) removeItemsObject:(Item *)value;
 
 - (instancetype)copyAsTemplate;
 

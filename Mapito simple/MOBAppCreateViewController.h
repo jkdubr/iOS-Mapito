@@ -8,6 +8,6 @@
 
 #import "MOBFormTableViewController.h"
 
-@interface MOBAppCreateViewController : MOBFormTableViewController
+@interface MOBAppCreateViewController : MOBFormTableViewController<MOBFormTableViewControllerDelegate>
 
 @end

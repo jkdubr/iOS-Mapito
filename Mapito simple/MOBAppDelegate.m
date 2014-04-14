@@ -10,6 +10,8 @@
 
 #import "App.h"
 
+#import "MOBFormCell.h"
+
 @implementation MOBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -25,17 +27,18 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.94 green:0.86 blue:0.58 alpha:1.00]}];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.27 green:0.15 blue:0.08 alpha:1.00]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-
+    
     
     [[UIButton appearance] setTitleColor:[UIColor colorWithRed:0.00 green:0.71 blue:0.27 alpha:1.00] forState:UIControlStateNormal];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-        [App reloadTemplates];
+    [App reloadTemplates];
+    
     
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -44,7 +47,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 

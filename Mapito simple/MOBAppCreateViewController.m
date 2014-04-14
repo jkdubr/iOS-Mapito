@@ -41,6 +41,8 @@
                         ];
     
     [self setEditingForm:YES];
+    
+    [self.navigationItem.rightBarButtonItem setEnabled:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +78,17 @@
     [[MOBDataManager sharedManager] saveContext];
     
     [self performSegueWithIdentifier:@"toFormEdit" sender:app];
+}
+
+#pragma mark - MOBFormTableViewControllerDelegate
+- (void)formTableViewControllerChangeElement:(MOBFormCell *)formCell withName:(NSString *)name withValue:(id)value
+{
+    [super formTableViewControllerChangeElement:formCell withName:name withValue:value];
+
+    if ([name isEqualToString:@"name"]) {
+        NSLog(@"v %@",@([value length]));
+        [self.navigationItem.rightBarButtonItem setEnabled:([value length]>0)];
+    }
 }
 
 @end

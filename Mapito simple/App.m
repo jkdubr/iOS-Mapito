@@ -41,6 +41,25 @@
     return app;
 }
 
+
++ (instancetype) appWithId: (NSString *) id
+{
+    App * temp;
+    
+    NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"App"];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"o_id == %@", id]];
+    NSArray * items = [[[MOBDataManager sharedManager] managedObjectContext] executeFetchRequest:fetchRequest error:nil];
+    
+    if([items count] > 0){
+        temp = [items objectAtIndex:0];
+    }else{
+        temp = [NSEntityDescription insertNewObjectForEntityForName:@"App" inManagedObjectContext:[[MOBDataManager sharedManager] managedObjectContext]];
+        [temp setO_id:id];
+        [[MOBDataManager sharedManager] saveContext];
+    }
+    return temp;
+}
+
 + (instancetype)appDefault
 {
     App * app = [App app];
@@ -120,9 +139,9 @@
                                      }
                                  ]];
     [app1 setO_formConfigMapping: @{
-                                   @"title"   :   @"title",
-                                   @"loc"     :   @"loc"
-                                   }];
+                                    @"title"   :   @"title",
+                                    @"loc"     :   @"loc"
+                                    }];
     
     App * app2 = [App app];
     [app2 setO_id:@"template-2"];
@@ -152,9 +171,9 @@
                                      }
                                  ]];
     [app2 setO_formConfigMapping: @{
-                                   @"title"   :   @"relevance",
-                                   @"loc"     :   @"loc"
-                                   }];
+                                    @"title"   :   @"relevance",
+                                    @"loc"     :   @"loc"
+                                    }];
     
     App * app3 = [App app];
     [app3 setO_id:@"template-3"];
@@ -210,9 +229,9 @@
                                      }
                                  ]];
     [app3 setO_formConfigMapping: @{
-                                   @"title"   :   @"title",
-                                   @"loc"     :   @"loc"
-                                   }];
+                                    @"title"   :   @"title",
+                                    @"loc"     :   @"loc"
+                                    }];
     
     
     App * app4 = [App app];
@@ -335,8 +354,10 @@
     [item setO_data:itemData];
     [item setO_id:[[NSUUID UUID] UUIDString]];
     
-    if (self.o_formConfigMapping[@"title"] && item.o_data[self.o_formConfigMapping[@"title"] ]) {
+    if (self.o_formConfigMapping[@"title"] && [item.o_data[self.o_formConfigMapping[@"title"]] length]) {
         [item setO_title:item.o_data[self.o_formConfigMapping[@"title"]]];
+    }else{
+        [item setO_title:@"Item"];
     }
     
     if (self.o_formConfigMapping[@"loc"] && item.o_data[self.o_formConfigMapping[@"loc"]]) {
@@ -360,6 +381,23 @@
     }];
 }
 
+#pragma mark - MOBManagedObjectSerialization
 
+- (void)managedObjectPopulate:(NSDictionary *)data
+{
+    self.o_id = data[@"id"];
+    self.o_title = data[@"title"];
+    self.o_formConfigItems = data[@"form"][@"items"];
+    self.o_formConfigMapping = data[@"form"][@"mapping"];
+}
+
+- (NSDictionary *)managedObjectExport
+{
+    return @{
+             @"title"   :   self.o_title,
+             @"form"    :   self.o_formConfigItems,
+             @"mapping" :   self.o_formConfigMapping
+             };
+}
 
 @end

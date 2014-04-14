@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		681123E018F187650036A820 /* MOBFormTagsCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 681123DF18F187650036A820 /* MOBFormTagsCollectionCell.m */; };
+		682D62D418FBF86B00AD8C2D /* MOBAppFormEditSelectTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D62D318FBF86A00AD8C2D /* MOBAppFormEditSelectTypeTableViewController.m */; };
+		683E29E318F674DF00D5342F /* MOBTableXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 683E29E218F674DF00D5342F /* MOBTableXTableViewController.m */; };
 		68A45F7D18EE813300D03D14 /* MOBAppDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A45F7C18EE813300D03D14 /* MOBAppDataViewController.m */; };
 		68A45F7F18EE841700D03D14 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A45F7E18EE841700D03D14 /* MapKit.framework */; };
 		68C6305A18EAF53F00220536 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6305918EAF53F00220536 /* Foundation.framework */; };
@@ -65,6 +67,11 @@
 /* Begin PBXFileReference section */
 		681123DE18F187650036A820 /* MOBFormTagsCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOBFormTagsCollectionCell.h; path = ../../shared/Forms/MOBFormTagsCollectionCell.h; sourceTree = "<group>"; };
 		681123DF18F187650036A820 /* MOBFormTagsCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOBFormTagsCollectionCell.m; path = ../../shared/Forms/MOBFormTagsCollectionCell.m; sourceTree = "<group>"; };
+		68263F6118F33B4200C2E196 /* Mapito simple copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Mapito simple copy-Info.plist"; path = "/Users/jdubrovsky/Development/iOS/Mapito Simple/Mapito simple copy-Info.plist"; sourceTree = "<absolute>"; };
+		682D62D218FBF86A00AD8C2D /* MOBAppFormEditSelectTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAppFormEditSelectTypeTableViewController.h; sourceTree = "<group>"; };
+		682D62D318FBF86A00AD8C2D /* MOBAppFormEditSelectTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAppFormEditSelectTypeTableViewController.m; sourceTree = "<group>"; };
+		683E29E118F674DF00D5342F /* MOBTableXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBTableXTableViewController.h; sourceTree = "<group>"; };
+		683E29E218F674DF00D5342F /* MOBTableXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBTableXTableViewController.m; sourceTree = "<group>"; };
 		68A45F7B18EE813300D03D14 /* MOBAppDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAppDataViewController.h; sourceTree = "<group>"; };
 		68A45F7C18EE813300D03D14 /* MOBAppDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAppDataViewController.m; sourceTree = "<group>"; };
 		68A45F7E18EE841700D03D14 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -174,6 +181,7 @@
 				68C6305818EAF53F00220536 /* Frameworks */,
 				68C6305718EAF53F00220536 /* Products */,
 				D7A1298FCC2B49E0A16CD184 /* Pods.xcconfig */,
+				68263F6118F33B4200C2E196 /* Mapito simple copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -322,6 +330,8 @@
 				68C6911518EC045A001B536A /* MOBAppCreateViewController.m */,
 				68C6911618EC045A001B536A /* MOBAppFormEditViewController.h */,
 				68C6911718EC045A001B536A /* MOBAppFormEditViewController.m */,
+				682D62D218FBF86A00AD8C2D /* MOBAppFormEditSelectTypeTableViewController.h */,
+				682D62D318FBF86A00AD8C2D /* MOBAppFormEditSelectTypeTableViewController.m */,
 				68C6912118EC0874001B536A /* MOBAppFormEditItemViewController.h */,
 				68C6912218EC0874001B536A /* MOBAppFormEditItemViewController.m */,
 				68C6911818EC045A001B536A /* MOBAppFormViewController.h */,
@@ -339,6 +349,8 @@
 		68D5DF3418F003E70062A5B9 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				683E29E118F674DF00D5342F /* MOBTableXTableViewController.h */,
+				683E29E218F674DF00D5342F /* MOBTableXTableViewController.m */,
 			);
 			name = test;
 			sourceTree = "<group>";
@@ -393,6 +405,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Mobera;
 				TargetAttributes = {
+					68C6305518EAF53F00220536 = {
+						DevelopmentTeam = V245LX8J2X;
+					};
 					68C6307618EAF53F00220536 = {
 						TestTargetID = 68C6305518EAF53F00220536;
 					};
@@ -486,6 +501,7 @@
 				68C6911218EC031A001B536A /* MOBFormTableViewController.m in Sources */,
 				68C6910D18EC031A001B536A /* MOBFormGPSCell.m in Sources */,
 				68C6911018EC031A001B536A /* MOBFormStepperCell.m in Sources */,
+				682D62D418FBF86B00AD8C2D /* MOBAppFormEditSelectTypeTableViewController.m in Sources */,
 				68C6911D18EC045A001B536A /* MOBAppFormEditViewController.m in Sources */,
 				681123E018F187650036A820 /* MOBFormTagsCollectionCell.m in Sources */,
 				68C6306618EAF53F00220536 /* main.m in Sources */,
@@ -496,6 +512,7 @@
 				68C690E318EC00BC001B536A /* History.m in Sources */,
 				68C6911F18EC045A001B536A /* MOBHomeTableViewController.m in Sources */,
 				68C6910B18EC031A001B536A /* MOBFormCell.m in Sources */,
+				683E29E318F674DF00D5342F /* MOBTableXTableViewController.m in Sources */,
 				68C690E618EC00BC001B536A /* App.m in Sources */,
 				68C690F718EC0310001B536A /* MOBAccount.m in Sources */,
 				68C6910C18EC031A001B536A /* MOBFormCodeScanner.m in Sources */,
@@ -632,10 +649,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mapito simple/Mapito simple-Prefix.pch";
 				INFOPLIST_FILE = "Mapito simple/Mapito simple-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -646,11 +665,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mapito simple/Mapito simple-Prefix.pch";
 				INFOPLIST_FILE = "Mapito simple/Mapito simple-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
