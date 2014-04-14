@@ -33,10 +33,6 @@
     if ([self.config[@"items"] isKindOfClass:[NSArray class]]) {
         self.formConfigItems = self.config[@"items"];
     }
-
-
-   // NSLog(@"items %@", self.formConfigItems);
-    NSLog(@"ahoj");
 }
 
 - (void)didReceiveMemoryWarning
