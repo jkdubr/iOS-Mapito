@@ -11,6 +11,8 @@
 #import "App.h"
 #import "History.h"
 
+#import <TSMessage.h>
+
 @interface MOBAppHistoryTableViewController (){
     NSDateFormatter * dateFormatter;
 }
@@ -65,11 +67,7 @@
     
     if ([[self.fetchedResultsController.sections objectAtIndex:0] numberOfObjects]==0)
     {
-        [[self.detail saveVersion] subscribeNext:^(History * history)
-        {
-            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[history linkMap]] applicationActivities:nil];
-            [self presentViewController:activityVC animated:YES completion:nil];
-        }];
+        [self share:nil];
     }
 }
 
@@ -190,10 +188,19 @@
 
 #pragma mark - actoins
 - (IBAction)share:(UIBarButtonItem *)sender {
-    [[self.detail saveVersion] subscribeNext:^(History * history){
-        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[history linkMap]] applicationActivities:nil];
-        [self presentViewController:activityVC animated:YES completion:nil];
-    }];
+    [sender setEnabled:NO];
+    
+    [TSMessage showNotificationWithTitle:@"Uploading data" subtitle:nil type:TSMessageNotificationTypeMessage];
+    [[self.detail saveVersion] subscribeNext:^(History * history)
+     {
+         [TSMessage showNotificationWithTitle:@"Data was successfully uploaded" subtitle:nil type:TSMessageNotificationTypeSuccess];
+         UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:@[[history linkMap]] applicationActivities:nil];
+         [self presentViewController:activityVC animated:YES completion:nil];
+     } error:^(NSError * error){
+         [TSMessage showNotificationWithTitle:@"Error during uploading" subtitle:nil type:TSMessageNotificationTypeError];
+     } completed:^(void){
+         [sender setEnabled:YES];
+     }];
 }
 
 

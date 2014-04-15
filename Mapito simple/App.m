@@ -12,15 +12,7 @@
 
 @interface App  ()
 
-- (void)addItemsObject:(NSManagedObject *)value;
 
-- (void)addItems:(NSSet *)values;
-- (void)removeItems:(NSSet *)values;
-
-- (void)addHistoryObject:(History *)value;
-- (void)removeHistoryObject:(History *)value;
-- (void)addHistory:(NSSet *)values;
-- (void)removeHistory:(NSSet *)values;
 
 @end
 
@@ -33,6 +25,7 @@
 @dynamic o_type;
 @dynamic items;
 @dynamic history;
+@dynamic workspace;
 
 
 + (instancetype)app
@@ -146,7 +139,7 @@
     App * app2 = [App app];
     [app2 setO_id:@"template-2"];
     [app2 setO_type:kMOBAppTypeTemplate];
-    [app2 setO_title:@"Pipe check"];
+    [app2 setO_title:@"Wells monitoring"];
     [app2 setO_formConfigItems:@[
                                  @{
                                      @"type": @"selectbox",
@@ -370,15 +363,35 @@
     return YES;
 }
 
-- (RACSignal *)saveVersion{
+- (RACSignal *)saveVersion
+{
     
     History * history = [History history];
     [history setItems:self.items];
     [history setApp:self];
     
+    
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+           
+           return  [[history upload] subscribeNext:^(id x){
+                NSLog(@"ok");
+                [subscriber sendNext:history];
+                [subscriber sendCompleted];
+            } error:^(NSError * error){
+                [[[MOBDataManager sharedManager] managedObjectContext] deleteObject:history];
+                [subscriber sendError:error];
+                [subscriber sendCompleted];
+            }];
+        }];
+    
+
+    
+    /*
     return [[history upload] map:^id(id x){
+        [[MOBDataManager sharedManager] saveContext];
         return history;
     }];
+    */
 }
 
 #pragma mark - MOBManagedObjectSerialization

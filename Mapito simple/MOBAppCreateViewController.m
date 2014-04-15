@@ -91,4 +91,13 @@
     }
 }
 
+- (void)formTableViewControllerEndEditingElement:(MOBFormCell *)formCell withName:(NSString *)name withValue:(id)value
+{
+    [super formTableViewControllerEndEditingElement:formCell withName:name withValue:value];
+    
+    if (self.navigationItem.rightBarButtonItem.enabled) {
+        [self go:nil];
+    }
+}
+
 @end

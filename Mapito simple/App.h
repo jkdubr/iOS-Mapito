@@ -34,19 +34,24 @@ typedef NS_ENUM(int16_t, kMOBAppType) {
 @property (nonatomic, retain) Workspace *workspace;
 
 - (BOOL) addItem:(NSDictionary *) values;
-- (void) removeItemsObject:(Item *)value;
+//- (void) removeItemsObject:(Item *)value;
 
 - (instancetype)copyAsTemplate;
 
 //@return History
 - (RACSignal *) saveVersion;
 
-- (RACSignal *) shareLink;
-- (RACSignal *) uploadToGists;
-- (NSString *) geojson;
 
 @end
 
 @interface App (CoreDataGeneratedAccessors)
+- (void)addItemsObject:(NSManagedObject *)value;
 
+- (void)addItems:(NSSet *)values;
+- (void)removeItems:(NSSet *)values;
+
+- (void)addHistoryObject:(History *)value;
+- (void)removeHistoryObject:(History *)value;
+- (void)addHistory:(NSSet *)values;
+- (void)removeHistory:(NSSet *)values;
 @end

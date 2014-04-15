@@ -76,4 +76,15 @@
         [self.navigationItem.rightBarButtonItem setEnabled:([value length]>0)];
     }
 }
+
+
+- (void)formTableViewControllerEndEditingElement:(MOBFormCell *)formCell withName:(NSString *)name withValue:(id)value
+{
+    [super formTableViewControllerEndEditingElement:formCell withName:name withValue:value];
+    
+    if (self.navigationItem.rightBarButtonItem.enabled) {
+        [self save:nil];
+    }
+}
+
 @end

@@ -17,9 +17,10 @@ PODS:
   - AFNetworking/Serialization (2.1.0)
   - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
-  - CMDQueryStringSerialization (0.1.0)
+  - CMDQueryStringSerialization (0.2.0)
   - cocoa-oauth (0.0.1):
     - NSData+Base64 (~> 1.0)
+  - HexColors (2.2.1)
   - JSMessagesViewController (4.0.2):
     - JSQSystemSoundPlayer
   - JSQSystemSoundPlayer (1.4.0)
@@ -38,6 +39,8 @@ PODS:
   - SimpleAuth/Twitter (0.3.2):
     - cocoa-oauth
     - SimpleAuth/Core
+  - TSMessages (0.9.6):
+    - HexColors
 
 DEPENDENCIES:
   - AFNetworking (~> 2.1.0)
@@ -45,15 +48,18 @@ DEPENDENCIES:
   - ReactiveCocoa
   - SimpleAuth/Facebook
   - SimpleAuth/Twitter
+  - TSMessages
 
 SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
-  CMDQueryStringSerialization: f6118185b92689188026e648c4eb5e2c87b5835b
-  cocoa-oauth: 8f4c8b77c77ac660de37f8125557c4ec09b0118a
+  CMDQueryStringSerialization: 6e9b97d0e4d9547419b6f9b428adc423a6e6e511
+  cocoa-oauth: d26914bf977e40b881ba0414e7da74d791d82a8f
+  HexColors: 99211502e17904af7891fc8f687d0e4958a6d66e
   JSMessagesViewController: 901c4f7b805e0990705d92eee8069562ac85bf9b
   JSQSystemSoundPlayer: 28ccd01a92a0cebc6de6361e8499011b4cb6dab7
-  NSData+Base64: 4819562faee4544e3cf5703f2139820b09732b28
+  NSData+Base64: bd5dacbc799c0339bd6a961a9ea80dd6eba11b33
   ReactiveCocoa: 1f6265f9d521923d3efcc37b00722cefc16df269
   SimpleAuth: 9bb929e4c09ef8ee7cf4cf0967eb45239455add5
+  TSMessages: 839edc3164b99ced48c30af9dde9710cd67bea4d
 
 COCOAPODS: 0.29.0

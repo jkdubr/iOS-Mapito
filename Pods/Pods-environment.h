@@ -51,8 +51,14 @@
 // CMDQueryStringSerialization
 #define COCOAPODS_POD_AVAILABLE_CMDQueryStringSerialization
 #define COCOAPODS_VERSION_MAJOR_CMDQueryStringSerialization 0
-#define COCOAPODS_VERSION_MINOR_CMDQueryStringSerialization 1
+#define COCOAPODS_VERSION_MINOR_CMDQueryStringSerialization 2
 #define COCOAPODS_VERSION_PATCH_CMDQueryStringSerialization 0
+
+// HexColors
+#define COCOAPODS_POD_AVAILABLE_HexColors
+#define COCOAPODS_VERSION_MAJOR_HexColors 2
+#define COCOAPODS_VERSION_MINOR_HexColors 2
+#define COCOAPODS_VERSION_PATCH_HexColors 1
 
 // JSMessagesViewController
 #define COCOAPODS_POD_AVAILABLE_JSMessagesViewController
@@ -107,6 +113,12 @@
 #define COCOAPODS_VERSION_MAJOR_SimpleAuth_Twitter 0
 #define COCOAPODS_VERSION_MINOR_SimpleAuth_Twitter 3
 #define COCOAPODS_VERSION_PATCH_SimpleAuth_Twitter 2
+
+// TSMessages
+#define COCOAPODS_POD_AVAILABLE_TSMessages
+#define COCOAPODS_VERSION_MAJOR_TSMessages 0
+#define COCOAPODS_VERSION_MINOR_TSMessages 9
+#define COCOAPODS_VERSION_PATCH_TSMessages 6
 
 // cocoa-oauth
 #define COCOAPODS_POD_AVAILABLE_cocoa_oauth

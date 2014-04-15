@@ -21,7 +21,6 @@
 {
     History * history = [NSEntityDescription insertNewObjectForEntityForName:@"History" inManagedObjectContext:[[MOBDataManager sharedManager] managedObjectContext]];
     [history setO_timestamp:[NSDate date]];
-    [[MOBDataManager sharedManager] saveContext];
     return history;
 }
 

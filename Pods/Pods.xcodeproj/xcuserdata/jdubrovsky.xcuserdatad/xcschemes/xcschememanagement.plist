@@ -8,109 +8,111 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 		<key>Pods-CMDQueryStringSerialization.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
+		</dict>
+		<key>Pods-HexColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-JSMessagesViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>Pods-JSQSystemSoundPlayer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 		<key>Pods-NSData+Base64.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
 		<key>Pods-ReactiveCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>8</integer>
 		</dict>
 		<key>Pods-SimpleAuth.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>9</integer>
+		</dict>
+		<key>Pods-TSMessages.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-cocoa-oauth.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04AAE3BD70024C6AB90F3179</key>
+		<key>04A1FCE63C06489887C11FC7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8ED8DE9057564C7C935E2FC8</key>
+		<key>5DE719F6AF3A4AF9BFD241DD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1E2A7580F954AEFAD66DD4A</key>
+		<key>700654FB95D64AF094F14BDA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B52EB93B62434354849D641F</key>
+		<key>834301FF3A794710A6E7D2ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C448349D57CD41E5B1F98723</key>
+		<key>8E4B9FA7F62349FDA4A67880</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C44E68C3D1AC4D08B5B2844F</key>
+		<key>96DE6ED02FCA4210A9348773</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C72601058E8F401BAD6FB0B8</key>
+		<key>A8FA904D0A5C4119AC0EDC8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DBBEE973887A4EC9A377B973</key>
+		<key>A90421962801447892A834E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E1D5861311014CB9A0CC86CC</key>
+		<key>B59BCAEE91ED4462A65FC5F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C06F3C5592A440BA92657E24</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CCAA7FC35B8948A7914A24C5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

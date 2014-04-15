@@ -12,7 +12,6 @@
 
 @interface Item : NSManagedObject<MKAnnotation,MOBManagedObjectSerialization>
 
-+ (instancetype) item;
 
 @property (nonatomic, retain) NSDictionary* o_data;
 @property (nonatomic, retain) NSString * o_id;
@@ -26,7 +25,7 @@
 @property (nonatomic, retain) NSSet *history;
 
 
-@property (nonatomic, copy) NSString * title;
+@property (nonatomic, copy, readonly) NSString * title;
 //@property (nonatomic, copy) NSString * subtitle;    //datum zmeny
 @property (nonatomic, assign, readonly)CLLocationCoordinate2D coordinate;
 
