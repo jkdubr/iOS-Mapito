@@ -20,6 +20,7 @@ PODS:
   - CMDQueryStringSerialization (0.2.0)
   - cocoa-oauth (0.0.1):
     - NSData+Base64 (~> 1.0)
+  - GoogleAnalytics-iOS-SDK (3.0.6)
   - HexColors (2.2.1)
   - JSMessagesViewController (4.0.2):
     - JSQSystemSoundPlayer
@@ -44,6 +45,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.1.0)
+  - GoogleAnalytics-iOS-SDK (~> 3.0)
   - JSMessagesViewController
   - ReactiveCocoa
   - SimpleAuth/Facebook
@@ -54,6 +56,7 @@ SPEC CHECKSUMS:
   AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
   CMDQueryStringSerialization: 6e9b97d0e4d9547419b6f9b428adc423a6e6e511
   cocoa-oauth: d26914bf977e40b881ba0414e7da74d791d82a8f
+  GoogleAnalytics-iOS-SDK: 16dfcc0c4491148bf372edc85a8470cc405ffb72
   HexColors: 99211502e17904af7891fc8f687d0e4958a6d66e
   JSMessagesViewController: 901c4f7b805e0990705d92eee8069562ac85bf9b
   JSQSystemSoundPlayer: 28ccd01a92a0cebc6de6361e8499011b4cb6dab7
