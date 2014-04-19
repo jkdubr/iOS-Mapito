@@ -56,7 +56,7 @@
 #pragma mark - table
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
-    return @"Create form for...";
+    return @"Create new custom layer";
 }
 #pragma mark - Navigation
 
@@ -86,7 +86,6 @@
     [super formTableViewControllerChangeElement:formCell withName:name withValue:value];
 
     if ([name isEqualToString:@"name"]) {
-        NSLog(@"v %@",@([value length]));
         [self.navigationItem.rightBarButtonItem setEnabled:([value length]>0)];
     }
 }

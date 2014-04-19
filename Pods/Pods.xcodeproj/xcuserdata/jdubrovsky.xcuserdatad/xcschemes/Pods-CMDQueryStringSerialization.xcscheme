@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7E122416EDA447E6BF87235A"
+               BlueprintIdentifier = "1B2C238822E54C8CA7C1481E"
                BuildableName = "libPods-CMDQueryStringSerialization.a"
                BlueprintName = "Pods-CMDQueryStringSerialization"
                ReferencedContainer = "container:Pods.xcodeproj">

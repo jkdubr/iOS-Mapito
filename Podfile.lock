@@ -45,7 +45,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.1.0)
-  - GoogleAnalytics-iOS-SDK (~> 3.0)
+  - GoogleAnalytics-iOS-SDK
   - JSMessagesViewController
   - ReactiveCocoa
   - SimpleAuth/Facebook
@@ -65,4 +65,4 @@ SPEC CHECKSUMS:
   SimpleAuth: 9bb929e4c09ef8ee7cf4cf0967eb45239455add5
   TSMessages: 839edc3164b99ced48c30af9dde9710cd67bea4d
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.32.1

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E18424E572774F3C889877E3"
+               BlueprintIdentifier = "83F10837475944CABD7A4CF5"
                BuildableName = "libPods-SimpleAuth.a"
                BlueprintName = "Pods-SimpleAuth"
                ReferencedContainer = "container:Pods.xcodeproj">

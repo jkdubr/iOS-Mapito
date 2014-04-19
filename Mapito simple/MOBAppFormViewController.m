@@ -86,6 +86,7 @@
     
     [[MOBDataManager sharedManager] saveContext];
     self.formValues = [[NSMutableDictionary alloc] init];
+
     
     
     UIImageView * v=[[UIImageView alloc] initWithFrame:[[[[UIApplication sharedApplication] keyWindow] rootViewController] view].frame];
@@ -100,6 +101,7 @@
     [[[[[UIApplication sharedApplication] keyWindow] rootViewController] view] addSubview:v];
     
     [UIView animateWithDuration:1 animations:^(void){
+        [self reloadData];
         [v setFrame:CGRectMake(320, 0, 10, 30)];
         [self.tableView reloadData];
     } completion:^(BOOL finished){

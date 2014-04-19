@@ -13,6 +13,8 @@
 		682D62E318FCA2B500AD8C2D /* MOBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D62E118FCA2B500AD8C2D /* MOBDataManager.m */; };
 		68A45F7D18EE813300D03D14 /* MOBAppDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A45F7C18EE813300D03D14 /* MOBAppDataViewController.m */; };
 		68A45F7F18EE841700D03D14 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A45F7E18EE841700D03D14 /* MapKit.framework */; };
+		68AD58C319015762000A3791 /* MOBAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68AD58C219015762000A3791 /* MOBAboutViewController.m */; };
+		68B1D61118FDD3FB0036B667 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B1D61018FDD3FB0036B667 /* CoreData.framework */; };
 		68C6305A18EAF53F00220536 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6305918EAF53F00220536 /* Foundation.framework */; };
 		68C6305C18EAF53F00220536 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6305B18EAF53F00220536 /* CoreGraphics.framework */; };
 		68C6305E18EAF53F00220536 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6305D18EAF53F00220536 /* UIKit.framework */; };
@@ -76,6 +78,12 @@
 		68A45F7B18EE813300D03D14 /* MOBAppDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAppDataViewController.h; sourceTree = "<group>"; };
 		68A45F7C18EE813300D03D14 /* MOBAppDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAppDataViewController.m; sourceTree = "<group>"; };
 		68A45F7E18EE841700D03D14 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		68AD58C119015762000A3791 /* MOBAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAboutViewController.h; sourceTree = "<group>"; };
+		68AD58C219015762000A3791 /* MOBAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAboutViewController.m; sourceTree = "<group>"; };
+		68B1D60A18FDD3C40036B667 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		68B1D60C18FDD3DC0036B667 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		68B1D60E18FDD3E70036B667 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		68B1D61018FDD3FB0036B667 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		68C6305618EAF53F00220536 /* Mapito simple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mapito simple.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68C6305918EAF53F00220536 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		68C6305B18EAF53F00220536 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B1D61118FDD3FB0036B667 /* CoreData.framework in Frameworks */,
 				68A45F7F18EE841700D03D14 /* MapKit.framework in Frameworks */,
 				68C6305C18EAF53F00220536 /* CoreGraphics.framework in Frameworks */,
 				68C6305E18EAF53F00220536 /* UIKit.framework in Frameworks */,
@@ -194,6 +203,10 @@
 		68C6305818EAF53F00220536 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				68B1D61018FDD3FB0036B667 /* CoreData.framework */,
+				68B1D60E18FDD3E70036B667 /* SystemConfiguration.framework */,
+				68B1D60C18FDD3DC0036B667 /* libz.dylib */,
+				68B1D60A18FDD3C40036B667 /* AdSupport.framework */,
 				68A45F7E18EE841700D03D14 /* MapKit.framework */,
 				68C6305918EAF53F00220536 /* Foundation.framework */,
 				68C6305B18EAF53F00220536 /* CoreGraphics.framework */,
@@ -207,7 +220,6 @@
 		68C6305F18EAF53F00220536 /* Mapito simple */ = {
 			isa = PBXGroup;
 			children = (
-				68D5DF3418F003E70062A5B9 /* test */,
 				68C6912018EC0461001B536A /* controller */,
 				68C630AF18EBDAFA00220536 /* shared */,
 				682D62DE18FCA2B500AD8C2D /* MOBAccount.h */,
@@ -339,15 +351,10 @@
 				68D5DF2318EF2E960062A5B9 /* MOBAppHistoryTableViewController.m */,
 				68D5DF2518EF3FC00062A5B9 /* MOBAppDataDetailViewController.h */,
 				68D5DF2618EF3FC00062A5B9 /* MOBAppDataDetailViewController.m */,
+				68AD58C119015762000A3791 /* MOBAboutViewController.h */,
+				68AD58C219015762000A3791 /* MOBAboutViewController.m */,
 			);
 			name = controller;
-			sourceTree = "<group>";
-		};
-		68D5DF3418F003E70062A5B9 /* test */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,7 +408,7 @@
 				ORGANIZATIONNAME = Mobera;
 				TargetAttributes = {
 					68C6305518EAF53F00220536 = {
-						DevelopmentTeam = V245LX8J2X;
+						DevelopmentTeam = D392Y256CQ;
 					};
 					68C6307618EAF53F00220536 = {
 						TestTargetID = 68C6305518EAF53F00220536;
@@ -497,6 +504,7 @@
 				68C6911018EC031A001B536A /* MOBFormStepperCell.m in Sources */,
 				682D62D418FBF86B00AD8C2D /* MOBAppFormEditSelectTypeTableViewController.m in Sources */,
 				68C6911D18EC045A001B536A /* MOBAppFormEditViewController.m in Sources */,
+				68AD58C319015762000A3791 /* MOBAboutViewController.m in Sources */,
 				681123E018F187650036A820 /* MOBFormTagsCollectionCell.m in Sources */,
 				68C6306618EAF53F00220536 /* main.m in Sources */,
 				68C6306A18EAF53F00220536 /* MOBAppDelegate.m in Sources */,
@@ -582,6 +590,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -600,6 +609,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "93BD3FCB-2387-4E9F-AF39-46C064FD2356";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -620,7 +630,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -631,6 +642,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "93BD3FCB-2387-4E9F-AF39-46C064FD2356";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -651,9 +663,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Mapito",
 					simple,
+					"$(PROJECT_DIR)/Mapito",
+					simple,
+					"$(PROJECT_DIR)/Mapito",
+					simple,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "FA8EE6D5-8F60-4344-B437-F427AB01BAA9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -664,8 +680,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mapito simple/Mapito simple-Prefix.pch";
 				INFOPLIST_FILE = "Mapito simple/Mapito simple-Info.plist";
@@ -673,9 +689,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Mapito",
 					simple,
+					"$(PROJECT_DIR)/Mapito",
+					simple,
+					"$(PROJECT_DIR)/Mapito",
+					simple,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "FA8EE6D5-8F60-4344-B437-F427AB01BAA9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
