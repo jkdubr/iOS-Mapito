@@ -13,7 +13,6 @@
 		682D62E318FCA2B500AD8C2D /* MOBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 682D62E118FCA2B500AD8C2D /* MOBDataManager.m */; };
 		68A45F7D18EE813300D03D14 /* MOBAppDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A45F7C18EE813300D03D14 /* MOBAppDataViewController.m */; };
 		68A45F7F18EE841700D03D14 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A45F7E18EE841700D03D14 /* MapKit.framework */; };
-		68AD58C319015762000A3791 /* MOBAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68AD58C219015762000A3791 /* MOBAboutViewController.m */; };
 		68B1D61118FDD3FB0036B667 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B1D61018FDD3FB0036B667 /* CoreData.framework */; };
 		68C6305A18EAF53F00220536 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6305918EAF53F00220536 /* Foundation.framework */; };
 		68C6305C18EAF53F00220536 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C6305B18EAF53F00220536 /* CoreGraphics.framework */; };
@@ -78,8 +77,6 @@
 		68A45F7B18EE813300D03D14 /* MOBAppDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAppDataViewController.h; sourceTree = "<group>"; };
 		68A45F7C18EE813300D03D14 /* MOBAppDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAppDataViewController.m; sourceTree = "<group>"; };
 		68A45F7E18EE841700D03D14 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		68AD58C119015762000A3791 /* MOBAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBAboutViewController.h; sourceTree = "<group>"; };
-		68AD58C219015762000A3791 /* MOBAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBAboutViewController.m; sourceTree = "<group>"; };
 		68B1D60A18FDD3C40036B667 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		68B1D60C18FDD3DC0036B667 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		68B1D60E18FDD3E70036B667 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -351,8 +348,6 @@
 				68D5DF2318EF2E960062A5B9 /* MOBAppHistoryTableViewController.m */,
 				68D5DF2518EF3FC00062A5B9 /* MOBAppDataDetailViewController.h */,
 				68D5DF2618EF3FC00062A5B9 /* MOBAppDataDetailViewController.m */,
-				68AD58C119015762000A3791 /* MOBAboutViewController.h */,
-				68AD58C219015762000A3791 /* MOBAboutViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -504,7 +499,6 @@
 				68C6911018EC031A001B536A /* MOBFormStepperCell.m in Sources */,
 				682D62D418FBF86B00AD8C2D /* MOBAppFormEditSelectTypeTableViewController.m in Sources */,
 				68C6911D18EC045A001B536A /* MOBAppFormEditViewController.m in Sources */,
-				68AD58C319015762000A3791 /* MOBAboutViewController.m in Sources */,
 				681123E018F187650036A820 /* MOBFormTagsCollectionCell.m in Sources */,
 				68C6306618EAF53F00220536 /* main.m in Sources */,
 				68C6306A18EAF53F00220536 /* MOBAppDelegate.m in Sources */,
@@ -680,8 +674,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Takeplace s. r. o. (D392Y256CQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Takeplace s. r. o. (D392Y256CQ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mapito simple/Mapito simple-Prefix.pch";
 				INFOPLIST_FILE = "Mapito simple/Mapito simple-Info.plist";

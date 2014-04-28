@@ -65,6 +65,10 @@
 {
     [super viewDidAppear:animated];
     
+    [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"App History"
+                                                                                    forKey:kGAIScreenName] build]];
+
+    
     if ([[self.fetchedResultsController.sections objectAtIndex:0] numberOfObjects]==0)
     {
         [self share:nil];
@@ -188,6 +192,13 @@
 
 #pragma mark - actoins
 - (IBAction)share:(UIBarButtonItem *)sender {
+    
+    
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:@"AppHistory"     // Event category (required)
+                                                                                        action:@"share"  // Event action (required)
+                                                                                         label:@"Share"          // Event label
+                                                                                         value:nil] build]];    // Event value
+    
     [sender setEnabled:NO];
     
     [TSMessage showNotificationWithTitle:@"Uploading data" subtitle:nil type:TSMessageNotificationTypeMessage];

@@ -45,6 +45,15 @@
     [self.navigationItem.rightBarButtonItem setEnabled:NO];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"App Create"
+                                                                                    forKey:kGAIScreenName] build]];
+
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -55,15 +55,16 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     [self.tableView reloadData];
-    
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
+    [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"Home"
+                                                                                    forKey:kGAIScreenName] build]];
 
 }
 
@@ -157,6 +158,59 @@
     [self performSegueWithIdentifier:@"toCustom" sender:nil];
 }
 
+- (IBAction)actions:(UIBarButtonItem *)sender {
+    UIActionSheet * as = [[UIActionSheet alloc] initWithTitle:@"Mapito" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Contact Us", @"Share this app", @"Review this app", nil];
+    [as showInView:[UIApplication sharedApplication].keyWindow];
+}
+
+#pragma mark - ActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:@"Home"     // Event category (required)
+                                                                                        action:@"actions"  // Event action (required)
+                                                                                         label:@"Actions"          // Event label
+                                                                                         value:@(buttonIndex)] build]];    // Event value
+    switch (buttonIndex) {
+        case 0:
+            if([MFMailComposeViewController canSendMail]) {
+                MFMailComposeViewController *mailCont = [[MFMailComposeViewController alloc] init];
+                [mailCont setMailComposeDelegate:self];
+                [mailCont setSubject:@"Mapito"];
+                [mailCont setToRecipients:[NSArray arrayWithObject:@"dubrovsky@mobera.eu"]];
+                
+                [self presentViewController:mailCont animated:YES completion:NULL];
+            }
+            break;
+        case 1:{
+            
+            NSString * text = @"Try Mapito, #mobile field #mapping solution designed for #GIS professionals based on @geojsonio";
+            NSURL *url = [NSURL URLWithString:@"http://bit.ly/1hDWLbf"];
+            
+            UIActivityViewController *controller =
+            [[UIActivityViewController alloc]
+             initWithActivityItems:@[text, url]
+             applicationActivities:nil];
+            
+            [self presentViewController:controller animated:YES completion:nil];
+            
+        }break;
+            case 2:
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id866590820"]];
+
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [controller dismissViewControllerAnimated:YES completion:NULL];
+    
+}
 
 #pragma mark - fetchedResultsController
 

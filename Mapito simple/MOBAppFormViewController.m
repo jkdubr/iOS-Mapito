@@ -45,10 +45,15 @@
 {
     [super viewWillAppear:animated];
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
-    
-  //  NSLog(@"x %@", self.formConfig);
-    
+    [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"App Form"
+                                                                                    forKey:kGAIScreenName] build]];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,6 +86,11 @@
 
 #pragma mark - actions
 - (IBAction)save:(UIBarButtonItem *)sender {
+    
+    [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:@"AppForm"     // Event category (required)
+                                                          action:@"save"  // Event action (required)
+                                                           label:@"Save"          // Event label
+                                                           value:nil] build]];    // Event value
     
     [self.detail addItem:self.formValues];
     

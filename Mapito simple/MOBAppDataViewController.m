@@ -42,6 +42,15 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"App Data"
+                                                                                    forKey:kGAIScreenName] build]];
+
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

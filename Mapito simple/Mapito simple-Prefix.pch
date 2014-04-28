@@ -19,5 +19,7 @@
     #import "MOBDataManager.h"
     #import "MOBAccount.h"
     #import "Constants.h"
-
+    #import <GAI.h>
+    #import <GAIDictionaryBuilder.h>
+    #import <GAIFields.h>
 #endif

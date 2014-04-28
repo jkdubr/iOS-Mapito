@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MOBHomeTableViewController : UITableViewController<NSFetchedResultsControllerDelegate>
+@import MessageUI;
+
+@interface MOBHomeTableViewController : UITableViewController<NSFetchedResultsControllerDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 
 @end

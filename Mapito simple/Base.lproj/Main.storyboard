@@ -1,42 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wHb-kp-731">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wHb-kp-731">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--About View Controller - About Mapito-->
-        <scene sceneID="EOS-GO-De4">
-            <objects>
-                <viewController title="About Mapito" id="6Ri-kd-5SP" customClass="MOBAboutViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cwt-fJ-SyD"/>
-                        <viewControllerLayoutGuide type="bottom" id="2nI-Ow-udd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gO0-Qy-IWX">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yzM-0H-1wV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="511"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="yzM-0H-1wV" secondAttribute="trailing" id="F5b-dJ-fzi"/>
-                            <constraint firstItem="2nI-Ow-udd" firstAttribute="top" secondItem="yzM-0H-1wV" secondAttribute="bottom" id="XMG-cS-MxF"/>
-                            <constraint firstItem="yzM-0H-1wV" firstAttribute="leading" secondItem="gO0-Qy-IWX" secondAttribute="leading" id="tQN-Ie-oRg"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="yzM-0H-1wV" id="mXx-Zo-eif"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TiO-eo-UQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="583" y="-777"/>
-        </scene>
         <!--Home Table View Controller-->
         <scene sceneID="BU5-Oz-eCQ">
             <objects>
@@ -87,9 +54,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="sQQ-hb-JKm">
-                        <barButtonItem key="rightBarButtonItem" title="About" id="sPb-um-0Mx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="sPb-um-0Mx">
                             <connections>
-                                <segue destination="6Ri-kd-5SP" kind="push" id="3w8-BM-JM5"/>
+                                <action selector="actions:" destination="GWX-Rz-29q" id="tac-jP-aEI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

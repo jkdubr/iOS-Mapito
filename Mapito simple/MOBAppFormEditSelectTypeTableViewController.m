@@ -36,6 +36,15 @@
     self.resultsFormTypes = [MOBFormCell allTypes];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"App Form Edit Select"
+                                                                                    forKey:kGAIScreenName] build]];
+
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
