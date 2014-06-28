@@ -39,7 +39,13 @@
     NSMutableArray * temp = [[NSMutableArray alloc] init];
     for (NSMutableDictionary * t in self.detail.app.o_formConfigItems) {
         NSMutableDictionary * t1 = [NSMutableDictionary dictionaryWithDictionary:t];
-        NSString *key = [t[@"name"] stringValue];
+        NSString *key;
+        if ([t[@"name"] isKindOfClass:[NSString class]]) {
+            key = t[@"name"];
+        }else{
+            key = [t[@"name"] stringValue];
+        }
+        
         if (self.detail.o_data[key] && ![self.detail.o_data[key] isKindOfClass:[NSNull class]] ) {
             t1[@"value"] = self.detail.o_data[key];
         }
