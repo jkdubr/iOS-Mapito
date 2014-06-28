@@ -39,8 +39,9 @@
     NSMutableArray * temp = [[NSMutableArray alloc] init];
     for (NSMutableDictionary * t in self.detail.app.o_formConfigItems) {
         NSMutableDictionary * t1 = [NSMutableDictionary dictionaryWithDictionary:t];
-        if (self.detail.o_data[t[@"name"]]) {
-            t1[@"value"] = self.detail.o_data[t[@"name"]];
+        NSString *key = [t[@"name"] stringValue];
+        if (self.detail.o_data[key] && ![self.detail.o_data[key] isKindOfClass:[NSNull class]] ) {
+            t1[@"value"] = self.detail.o_data[key];
         }
         [temp addObject:t1];
     }
@@ -64,7 +65,7 @@
     
     [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"App Data Detail"
                                                                                     forKey:kGAIScreenName] build]];
-
+    
 }
 
 - (void)didReceiveMemoryWarning
