@@ -12,7 +12,7 @@
 
 #import "MOBFormCell.h"
 
-
+#import <Crashlytics/Crashlytics.h>
 
 @implementation MOBAppDelegate
 
@@ -20,6 +20,8 @@
 {
     [[GAI sharedInstance] trackerWithTrackingId:@"UA-50045683-1"];
 
+    [Crashlytics startWithAPIKey:@"bd5e044767b216991ff8c3510af62e8b434d2922"];
+    
     [[UIToolbar appearance] setBackgroundColor:[UIColor colorWithRed:0.88 green:0.80 blue:0.56 alpha:1.00]];
     [[UIWindow appearance] setTintColor:[UIColor colorWithRed:0.88 green:0.80 blue:0.56 alpha:1.00]];
     

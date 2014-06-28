@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_CMDQueryStringSerialization 2
 #define COCOAPODS_VERSION_PATCH_CMDQueryStringSerialization 0
 
+// CrashlyticsFramework
+#define COCOAPODS_POD_AVAILABLE_CrashlyticsFramework
+#define COCOAPODS_VERSION_MAJOR_CrashlyticsFramework 2
+#define COCOAPODS_VERSION_MINOR_CrashlyticsFramework 1
+#define COCOAPODS_VERSION_PATCH_CrashlyticsFramework 7
+
 // GoogleAnalytics-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK
 #define COCOAPODS_VERSION_MAJOR_GoogleAnalytics_iOS_SDK 3
