@@ -38,7 +38,7 @@
     
     
     self.resultsFormConfig = [NSMutableArray arrayWithArray:self.detail.o_formConfigItems];
-
+    
     
     
     [self.textFieldTitle setText:self.detail.o_title];
@@ -59,7 +59,7 @@
     
     [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"App Form Edit"
                                                                                     forKey:kGAIScreenName] build]];
-
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,12 +77,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-        return self.resultsFormConfig.count;
+    return self.resultsFormConfig.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-        return @"Edit your application";
+    return @"Edit your application";
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
@@ -94,14 +94,14 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-
-       NSString * title = self.resultsFormConfig[indexPath.row][@"title"];
-       NSString * subtitle = [MOBFormCell cellInfoForName:self.resultsFormConfig[indexPath.row][@"type"]][@"title"] ;
-
+    
+    NSString * title = self.resultsFormConfig[indexPath.row][@"title"];
+    NSString * subtitle = [MOBFormCell cellInfoForName:self.resultsFormConfig[indexPath.row][@"type"]][@"title"] ;
+    
     if (title) {
         [cell.textLabel setText:title];
     }
-
+    
     if (subtitle) {
         [cell.detailTextLabel setText:subtitle];
     }
@@ -113,15 +113,15 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        [self.resultsFormConfig removeObjectAtIndex:indexPath.row];
-        [self.tableView reloadData];
+    [self.resultsFormConfig removeObjectAtIndex:indexPath.row];
+    [self.tableView reloadData];
 }
 
 
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        return YES;
+    return YES;
 }
 
 #pragma mark - actions
@@ -149,12 +149,12 @@
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
- if ([segue.identifier isEqualToString:@"toLayer"]){
+    if ([segue.identifier isEqualToString:@"toLayer"]){
         [segue.destinationViewController setDetail:self.detail];
- } else if ([segue.identifier isEqualToString:@"toTypes"]){
-     [segue.destinationViewController setResultsFormConfig:self.resultsFormConfig];
+    } else if ([segue.identifier isEqualToString:@"toTypes"]){
+        [segue.destinationViewController setResultsFormConfig:self.resultsFormConfig];
         [segue.destinationViewController setDetail:self.detail];
- }
+    }
 }
 
 #pragma mark - UITextFieldDelegate

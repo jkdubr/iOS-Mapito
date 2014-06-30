@@ -42,7 +42,7 @@
     
     [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"App Form Edit Select"
                                                                                     forKey:kGAIScreenName] build]];
-
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,10 +79,7 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    
-    NSString * title;
-    
-    title = self.resultsFormTypes[indexPath.row][@"title"];
+    NSString * title = self.resultsFormTypes[indexPath.row][@"title"];
     
     if (title) {
         [cell.textLabel setText:title];
@@ -98,17 +95,17 @@
 {
     if ([segue.identifier isEqualToString:@"toItem"]) {
         
-            NSDictionary * config = [self.resultsFormTypes objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        NSDictionary * config = [self.resultsFormTypes objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         [segue.destinationViewController setDetail:self.detail];
         [segue.destinationViewController setConfig:config];
-             [segue.destinationViewController setResultsFormConfig:self.resultsFormConfig];
+        [segue.destinationViewController setResultsFormConfig:self.resultsFormConfig];
         [segue.destinationViewController setEditingForm:YES];
     }}
 
 
 #pragma mark - actions
 - (IBAction)close:(UIBarButtonItem *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

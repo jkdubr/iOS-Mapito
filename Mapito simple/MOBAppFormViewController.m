@@ -53,7 +53,7 @@
     
     [[[GAI sharedInstance] defaultTracker] send:[[[GAIDictionaryBuilder createAppView] set:@"App Form"
                                                                                     forKey:kGAIScreenName] build]];
-
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,16 +88,14 @@
 - (IBAction)save:(UIBarButtonItem *)sender {
     
     [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:@"AppForm"     // Event category (required)
-                                                          action:@"save"  // Event action (required)
-                                                           label:@"Save"          // Event label
-                                                           value:nil] build]];    // Event value
+                                                                                        action:@"save"  // Event action (required)
+                                                                                         label:@"Save"          // Event label
+                                                                                         value:nil] build]];    // Event value
     
     [self.detail addItem:self.formValues];
     
     [[MOBDataManager sharedManager] saveContext];
     self.formValues = [[NSMutableDictionary alloc] init];
-
-    
     
     UIImageView * v=[[UIImageView alloc] initWithFrame:[[[[UIApplication sharedApplication] keyWindow] rootViewController] view].frame];
     CALayer * layer = self.tableView.layer;
