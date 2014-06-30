@@ -617,7 +617,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "93BD3FCB-2387-4E9F-AF39-46C064FD2356";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -650,7 +650,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PROVISIONING_PROFILE = "93BD3FCB-2387-4E9F-AF39-46C064FD2356";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -677,7 +677,7 @@
 					simple,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FA8EE6D5-8F60-4344-B437-F427AB01BAA9";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -688,8 +688,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Takeplace s. r. o. (D392Y256CQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Takeplace s. r. o. (D392Y256CQ)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Mapito simple/Mapito simple-Prefix.pch";
 				INFOPLIST_FILE = "Mapito simple/Mapito simple-Info.plist";
@@ -703,7 +703,7 @@
 					simple,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FA8EE6D5-8F60-4344-B437-F427AB01BAA9";
+				PROVISIONING_PROFILE = "72A0B475-5AA3-44D8-9F93-CF12FAAA9DEC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
